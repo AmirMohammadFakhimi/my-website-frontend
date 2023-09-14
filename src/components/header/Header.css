@@ -1,0 +1,75 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px 15px 30px;
+
+    background: rgba(122, 122, 122, 0.13);
+    backdrop-filter: blur(8px);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 0.01rem solid rgba(224, 224, 224, 0.42);
+}
+
+#header-left {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+
+}
+
+#header-logo {
+    height: 50px;
+    width: 50px;
+}
+
+#name-slogan {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    height: fit-content;
+    width: fit-content;
+    color: white;
+}
+
+#header-name {
+    font-size: 1.1rem;
+    font-family: Kalam, cursive;
+    font-weight: 700;
+}
+
+#header-slogan {
+    font-size: 0.9rem;
+    font-family: Merienda, cursive;
+    font-weight: 500;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font: 700 1.05rem Kalam, sans-serif;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    height: fit-content;
+    width: fit-content;
+    color: white;
+    cursor: pointer;
+    border-bottom: rgba(68, 67, 67, 0.52) 2px solid;
+    padding-bottom: 5px;
+}
+
+.menu-item-selected {
+    border-bottom-color: yellow;
+}

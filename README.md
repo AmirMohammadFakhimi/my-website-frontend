@@ -1,2 +1,2 @@
 # my-website-frontend
-It's frontend of my website.
+It's a frontend of my website.
