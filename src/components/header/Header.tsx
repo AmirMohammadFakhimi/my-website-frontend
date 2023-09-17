@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Header.css';
 import logo from './asset/logo.png';
 import {urls} from "../../global/Variables";
-import {getMenuItemId, setMenuItemId} from "../../global/Storages";
+import {getMenuItemUrl, setMenuItemUrl} from "../../global/Storages";
 import {useNavigate} from "react-router-dom";
 
 function Header() {
@@ -18,13 +18,14 @@ function Header() {
         {id: 5, name: 'Projects', url: urls.projects},
         {id: 6, name: 'Courses', url: urls.courses},
         {id: 7, name: 'Licenses & certifications', url: urls.licenses},
+        {id: 8, name: 'Contact Me', url: urls.contactMe}
     ]
 
     const navigate = useNavigate()
-    const [selectedMenuItem, setSelectedMenuItem] = useState(getMenuItemId())
+    const [selectedMenuItem, setSelectedMenuItem] = useState(getMenuItemUrl())
 
     useEffect(() => {
-        setMenuItemId(selectedMenuItem)
+        setMenuItemUrl(selectedMenuItem)
     }, [selectedMenuItem])
 
     return (
@@ -38,10 +39,10 @@ function Header() {
             </div>
             <ul id={'menu'}>
                 {menuItems.map(menuItem => {
-                    return <li key={menuItem.id}
-                               className={'menu-item ' + (selectedMenuItem === menuItem.id ? 'menu-item-selected' : '')}
+                    return <li key={menuItem.id} id={menuItem.id === 8 ? 'contact-me-header' : ''}
+                               className={'menu-item ' + (selectedMenuItem === menuItem.url ? 'menu-item-selected' : '')}
                                onClick={() => {
-                                   setSelectedMenuItem(menuItem.id);
+                                   setSelectedMenuItem(menuItem.url);
                                    navigate(menuItem.url)
                                }}>
                         {menuItem.name}

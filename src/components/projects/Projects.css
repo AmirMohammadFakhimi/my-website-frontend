@@ -1,0 +1,40 @@
+#projects {
+    display: flex;
+    flex-direction: column;
+    font-family: Kalam, sans-serif;
+}
+
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+}
+
+#projects-container > div:nth-child(odd) {
+    border-right: 2px solid #444;
+}
+
+#projects-container > div {
+    border-bottom: 2px solid #444;
+}
+
+#projects-container > div:nth-child(odd):last-child {
+    border-bottom: none;
+}
+
+#projects-container > div:nth-child(even):last-child {
+    border-bottom: none;
+}
+
+.project {
+    display: flex;
+    align-items: start;
+    padding: 30px 50px 30px 8%;
+}
+
+.project-logo {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}

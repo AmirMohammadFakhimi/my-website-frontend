@@ -1,0 +1,28 @@
+.volunteering-total {
+    font-size: 1.9rem;
+    color: gold;
+    padding-top: 0;
+    margin-block-start: -40px;
+}
+
+#volunteering-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+}
+
+#volunteering-container > div:nth-child(odd) {
+    border-right: 2px solid #444;
+}
+
+#volunteering-container > div {
+    border-bottom: 2px solid #444;
+}
+
+#volunteering-container > div:nth-child(odd):last-child {
+    border-bottom: none;
+}
+
+#volunteering-container > div:nth-child(even):last-child {
+    border-bottom: none;
+}

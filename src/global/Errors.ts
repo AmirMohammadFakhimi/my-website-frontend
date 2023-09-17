@@ -1,43 +1,6 @@
 import {AxiosResponse} from "axios";
 import {enqueueSnackbar} from "notistack";
 
-// Error
-const addUserError = 'خطا در ثبت نام. لطفاً دوباره تلاش کنید.';
-const userExistError = 'کاربری با این نام کاربری موجود است.'
-const pageNotAvailableError = 'صفحه‌ی مورد نظر موجود نیست.'
-const paginationError = 'خطا در صفحه بندی'
-const transfersSelectedPositionNotFoundError = 'بازیکنی انتخاب نشده‌است.'
-const playerNotFoundError = 'بازیکنی یافت نشد.'
-const emptyFieldError = 'لطفاً تمامی فیلدها را پر کنید.'
-const emptyNameError = 'نام خود را وارد کنید'
-const emptyFamilyNameError = "نام خانوادگی خود را وارد کنید"
-const emptyEmailError = "ایمیل معتبر وارد کنید"
-const emptyCountryError = "کشور را انتخاب کنید"
-const emptyUsernameError = "نام کاربری را وارد کنید"
-const actionError = "خطایی رخ داد "
-
-
-// Info
-const invalidToken = 'لطفاً دوباره وارد شوید.'
-
-export {
-    addUserError,
-    userExistError,
-    pageNotAvailableError,
-    paginationError,
-    transfersSelectedPositionNotFoundError,
-    playerNotFoundError,
-    emptyFieldError,
-    emptyNameError,
-    emptyCountryError,
-    emptyFamilyNameError,
-    emptyEmailError,
-    emptyUsernameError,
-    actionError,
-
-    invalidToken
-}
-
 export function onAxiosSuccess({
                                    res,
                                    myError,
@@ -99,12 +62,4 @@ export function onMyError({
         onError()
 
     return onErrorReturnValue
-}
-
-export function onInfo(information: string) {
-    enqueueSnackbar(information, {variant: 'info'})
-}
-
-export function onS(information: string) {
-    enqueueSnackbar(information, {variant: 'success'})
 }

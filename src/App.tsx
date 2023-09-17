@@ -3,12 +3,21 @@ import './App.css';
 import {Route, Routes, useNavigate} from "react-router-dom";
 import AboutMe from "./components/aboutMe/AboutMe";
 import Header from "./components/header/Header";
+import {urls} from "./global/Variables";
+import Educations from "./components/educations/Educations";
+import {getMenuItemUrl} from "./global/Storages";
+import Experiences from "./components/experiences/Experiences";
+import Volunteering from "./components/volunteering/Volunteering";
+import Projects from "./components/projects/Projects";
+import Courses from "./components/courses/Courses";
+import Licenses from "./components/licenses/Licenses";
+import ContactMe from "./components/contactMe/ContactMe";
 
 function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-            navigate('about-me')
+        navigate(getMenuItemUrl())
     }, [])
 
     return (
@@ -16,25 +25,15 @@ function App() {
             <Header/>
 
             <Routes>
-                <Route path={'about-me'} element={<AboutMe/>}/>
-                {/*<Route path={`/home/${homeTabsEndingUrl.myTeam}/${subTabsEndingUrl.list}`} element={*/}
-                {/*    <Home mainTab={<MyTeam subTab={'list'}/>}/>*/}
-                {/*}/>*/}
-                {/*<Route path={`/home/${homeTabsEndingUrl.transfers}/${subTabsEndingUrl.schematic}`} element={*/}
-                {/*    <Home mainTab={<Transfers subTab={'schematic'}/>}/>*/}
-                {/*}/>*/}
-                {/*<Route path={`/home/${homeTabsEndingUrl.transfers}/${subTabsEndingUrl.list}`} element={*/}
-                {/*    <Home mainTab={<Transfers subTab={'list'}/>}/>*/}
-                {/*}/>*/}
-                {/*<Route path={`/home/${homeTabsEndingUrl.events}`} element={*/}
-                {/*    <Home mainTab={<LatestEvents/>}/>*/}
-                {/*}/>*/}
-                {/*<Route path={`/home/${homeTabsEndingUrl.profile}`} element={*/}
-                {/*    <Home mainTab={<Profile/>}/>*/}
-                {/*}/>*/}
-                {/*<Route path={`/home/${homeTabsEndingUrl.prizes}`} element={*/}
-                {/*    <Home mainTab={<Prizes/>}/>*/}
-                {/*}/>*/}
+                <Route path={urls.aboutMe} element={<AboutMe/>}/>
+                <Route path={urls.educations} element={<Educations/>}/>
+                <Route path={urls.experiences} element={<Experiences/>}/>
+                <Route path={urls.experiences} element={<Experiences/>}/>
+                <Route path={urls.volunteering} element={<Volunteering/>}/>
+                <Route path={urls.projects} element={<Projects/>}/>
+                <Route path={urls.courses} element={<Courses/>}/>
+                <Route path={urls.licenses} element={<Licenses/>}/>
+                <Route path={urls.contactMe} element={<ContactMe/>}/>
             </Routes>
         </div>
     );

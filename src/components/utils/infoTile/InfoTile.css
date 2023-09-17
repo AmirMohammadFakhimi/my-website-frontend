@@ -1,0 +1,44 @@
+#tiles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Kalam, sans-serif;
+}
+
+.tile-container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding-left: 5%;
+    text-decoration: none;
+    color: white;
+}
+
+.tile-container:hover .tile-image {
+    transform: scale(1.1);
+    transform-origin: 100% 50%;
+    opacity: 1;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.tile-container:not(:hover) .tile-image {
+    transform: scale(1);
+    transform-origin: 100% 50%;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.tile-container-except-image {
+    display: flex;
+    align-items: start;
+    padding-right: 30px;
+}
+
+.tile-image-link {
+    width: 40%;
+}
+
+.tile-image {
+    width: 100%;
+    border-radius: 20px;
+    opacity: 0.3;
+}
