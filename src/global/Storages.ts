@@ -1,10 +1,12 @@
+import {urls} from "./Variables";
+
 const menuItemsKey = 'menu-item-id'
 
-export function setMenuItemId(menuItem: number) {
-    sessionStorage.setItem(menuItemsKey, String(menuItem))
+export function setMenuItemUrl(menuItem: string) {
+    sessionStorage.setItem(menuItemsKey, menuItem)
 }
 
-export function getMenuItemId() {
-    const tab = sessionStorage.getItem(menuItemsKey)
-    return tab ? Number(tab) : 1
+export function getMenuItemUrl() {
+    const menuItem = sessionStorage.getItem(menuItemsKey)
+    return menuItem ? menuItem : urls.aboutMe
 }

@@ -1,0 +1,28 @@
+.current-project {
+    color: #6180fb;
+}
+
+.current-project:not(:first-child) {
+    margin-top: 25px;
+}
+
+.experience-project-title {
+    font: 700 1.3rem Kalam, sans-serif;
+    color: gold;
+}
+
+.experience-project-title:hover {
+    opacity: 0.7;
+}
+
+.experience-project-title:visited {
+    color: darkgoldenrod;
+}
+
+.experience-project-description {
+    font: 400 1.1rem sans-serif;
+    margin-top: 2px;
+    text-indent: 15px;
+    word-spacing: 1px;
+    color: white;
+}

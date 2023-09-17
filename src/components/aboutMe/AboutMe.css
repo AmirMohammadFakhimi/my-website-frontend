@@ -1,0 +1,66 @@
+#about-me {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+
+#about-me-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    font: 300 1.4rem Kalam, sans-serif;
+    max-width: 60%;
+
+    text-align: justify;
+}
+
+.about-me-paragraph {
+    margin-block: 0;
+}
+
+.about-me-link {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.about-me-link:hover {
+    color: #b48888;
+}
+
+.about-me-link:visited {
+    color: rgba(114, 130, 159, 0.82);
+}
+
+#title {
+    font: 700 2.3rem Kalam, sans-serif;
+}
+
+.bold {
+    display: contents;
+    font-weight: 700;
+}
+
+#profile-image {
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    margin-right: 5%;
+    box-shadow: 0 0 20px 2px rgb(208, 228, 255);
+    position: sticky;
+    top: 180px;
+}
+
+/*@media only screen and (max-width: 768px) {*/
+/*    #about-me {*/
+/*        display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*    padding-top: 70px;*/
+/*    }*/
+
+/*    #about-me-text {*/
+/*        margin-left: 0;*/
+/*        margin-top: 0;*/
+/*        font-size: 1em;*/
+/*    }*/
+/*}*/

@@ -1,0 +1,16 @@
+.tile-logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.tile-logo:hover {
+    opacity: 0.5;
+    transform: scale(1.1);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.tile-logo:not(:hover) {
+    transform: scale(1);
+    transition: transform 0.5s, opacity 0.5s;
+}

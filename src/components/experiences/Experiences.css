@@ -1,0 +1,19 @@
+#experiences {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Kalam, sans-serif;
+}
+
+.experience-projects-container {
+    margin-top: 30px;
+    text-align: start;
+}
+
+.experience-projects-title {
+    font: 700 1.5rem Kalam, sans-serif;
+}
+
+.experience-projects {
+    margin-block-start: 10px;
+}

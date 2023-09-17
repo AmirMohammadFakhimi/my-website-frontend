@@ -1,0 +1,37 @@
+#courses-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 5%;
+}
+
+.course {
+    width: 90%;
+    text-align: start;
+    color: #6180fb;
+    font-size: 1.5rem;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #444;
+}
+
+.course-title {
+    font: 700 1.8rem Kalam, sans-serif;
+    color: gold;
+    margin-bottom: 5px;
+}
+
+.course-number {
+    font: 400 1.4rem Kalam, sans-serif;
+    color: white;
+}
+
+.course-grade {
+    font: 400 1.4rem Kalam, sans-serif;
+    color: white;
+    margin-top: -5px;
+}
+
+.course-associated-with {
+    font: 400 1.3rem Kalam, sans-serif;
+    margin-top: -3px;
+}

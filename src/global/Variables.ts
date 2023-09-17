@@ -6,4 +6,5 @@ export const urls = {
     projects: 'projects',
     courses: 'courses',
     licenses: 'licenses',
+    contactMe: 'contact-me',
 }
