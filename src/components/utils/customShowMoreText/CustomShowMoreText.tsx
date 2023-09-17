@@ -1,17 +1,30 @@
 import React from "react";
 import './CustomShowMoreText.css'
-import ShowMoreText from "react-show-more-text";
 
-function CustomShowMoreText({lines, className, children}: { lines?: number, className: string, children?: string }) {
+
+function CustomShowMoreText({character = 100, className, children}: {
+    character?: number,
+    className: string,
+    children?: string
+}) {
+    const [isShowMore, setIsShowMore] = React.useState(false)
+
 
     return (
-        <ShowMoreText
-            lines={lines || 2}
-            className={`show-more-text ${className}`}
-            anchorClass={'show-more-less-clickable'}
-        >
-            {children}
-        </ShowMoreText>
+        <div className={`custom-show-more-text ${className}`}>
+            <div className={`show-more-text ${className}`}>
+                {children !== undefined && children.length > character ?
+                    (isShowMore ? children : children.substring(0, character) + '...') :
+                    children}
+            </div>
+            {
+                children !== undefined && children.length > character &&
+                <div className={'show-more-less'}
+                     onClick={() => setIsShowMore(!isShowMore)}>
+                    {isShowMore ? 'Show less' : 'Show more'}
+                </div>
+            }
+        </div>
     )
 }
 
