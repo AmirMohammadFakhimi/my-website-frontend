@@ -2,7 +2,7 @@ import axios from "axios";
 
 const customAxios = axios.create(
     {
-        baseURL: 'https://amfakhimi.com',
+        baseURL: 'https://amfakhimi.com:2053',
         timeout: 5000,
     }
 );
