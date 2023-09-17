@@ -2,8 +2,8 @@ import axios from "axios";
 
 const customAxios = axios.create(
     {
-        baseURL: 'https://193.163.200.102:8000',
-        timeout: 5000
+        baseURL: 'https://amfakhimi.com',
+        timeout: 5000,
     }
 );
 
