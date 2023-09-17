@@ -3,18 +3,7 @@ import "./InfoTile.css";
 import InfoTileInfoPart from "./infoTileInfoPart/InfoTileInfoPart";
 import InfoTileLogoPart from "./infoTileLogoPart/InfoTileLogoPart";
 
-// title: string,
-//         employmentType: EmploymentType,
-//         company: string,
-//         location: string,
-//         locationType: LocationType,
-//         start: Date,
-//         end: Date | 'Present',
-//         description: string,
-//         skills: string[],
-//         logoUrl: string,
-//         websiteUrl: string,
-//         certificateUrl?: string,
+
 function InfoTile({
                       index,
                       title,

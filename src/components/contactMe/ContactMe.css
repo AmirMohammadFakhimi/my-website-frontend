@@ -23,12 +23,14 @@
     color: yellow;
 }
 
-#resume-download {
+.file-download {
+    font-weight: 700;
+    color: yellow;
     text-decoration: underline;
     cursor: pointer;
 }
 
-#resume-download:hover {
+.file-download:hover {
     text-decoration: none;
     color: #6180fb;
 }
@@ -36,7 +38,7 @@
 .social-media-title {
     font-size: 2rem;
     padding-top: 0;
-    margin-block-start: 40px;
+    margin-block-start: 0;
     color: yellow;
     padding-left: 0;
 }

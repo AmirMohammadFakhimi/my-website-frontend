@@ -67,7 +67,7 @@ function Courses() {
                             {course.number}
                         </div>
                         <div className={'course-grade'}>
-                            {course.myGrade !== undefined && course.maxGrade !== undefined ?
+                            {course.myGrade !== null && course.maxGrade !== null ?
                                 `Grade: ${course.myGrade} / ${course.maxGrade}` : ''}
                         </div>
                         <div className={'course-associated-with'}>

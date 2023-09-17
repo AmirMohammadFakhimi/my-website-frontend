@@ -1,6 +1,7 @@
 import React from "react";
 import './ContactMe.css'
 import HeaderTitle from "../utils/headerTitle/HeaderTitle";
+import {getCV, getResume} from "../../global/ApiCalls";
 
 function ContactMe() {
     const socialMedia: {
@@ -62,8 +63,10 @@ function ContactMe() {
                         soon as possible.
                     </p>
                     <p className={'contact-me-text'}>
-                        Looking to explore my qualifications in more detail? You can download my resume <a
-                        id={'resume-download'} download={true}>here</a>.
+                        Looking to explore my qualifications in more detail? You can download my <a href={getCV()}
+                                                                                                    className={'file-download'}
+                                                                                                    download={true}>CV</a> and <a
+                        href={getResume()} className={'file-download'} download={true}>Resume</a> :)
                     </p>
                     <p id={'contact-me-last-text'} className={'contact-me-text'}>
                         Let's connect and explore new opportunities together!

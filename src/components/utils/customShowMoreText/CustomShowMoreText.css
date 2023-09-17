@@ -1,12 +1,27 @@
-.show-more-text {
-    font: 400 1.2rem Kalam, sans-serif;
+.custom-show-more-text {
     text-align: justify;
-    white-space: pre-wrap;
 }
 
-.show-more-less-clickable {
+.show-more-text {
+    font: 400 1.2rem Kalam, sans-serif;
+    white-space: pre-wrap;
+    display: inline;
+}
+
+.show-more-less {
     font: 300 1.1rem Kalam, sans-serif;
     color: #6180fb;
     cursor: pointer;
     word-spacing: 0;
+    display: inline;
+    text-decoration: underline;
+    padding-left: 10px;
+}
+
+.show-more-less:hover {
+    text-decoration: none;
+}
+
+span {
+    display: inline;
 }
