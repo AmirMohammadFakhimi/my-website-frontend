@@ -2,7 +2,7 @@ import axios from "axios";
 
 const customAxios = axios.create(
     {
-        baseURL: 'http://193.163.200.102:8000',
+        baseURL: 'https://193.163.200.102:8000',
         timeout: 5000
     }
 );
