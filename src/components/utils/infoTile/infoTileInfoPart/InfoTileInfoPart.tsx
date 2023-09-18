@@ -8,6 +8,7 @@ function InfoTileInfoPart({
                               startDate,
                               endDate,
                               underDate,
+    descriptionHeadline,
                               description,
                               skills,
                               websiteUrl,
@@ -18,6 +19,7 @@ function InfoTileInfoPart({
     startDate: Date,
     endDate?: Date | 'Present',
     underDate?: string,
+    descriptionHeadline?: string,
     description?: string,
     skills?: string[],
     websiteUrl: string,
@@ -58,7 +60,7 @@ function InfoTileInfoPart({
             {getDateText(startDate, endDate)}
             <div
                 className={'tile-under-date'}>{underDate}</div>
-            <CustomShowMoreText className={'tile-description'}>
+            <CustomShowMoreText className={'tile-description'} headline={descriptionHeadline}>
                 {description}
             </CustomShowMoreText>
             <div className={'tile-skills-container'}>

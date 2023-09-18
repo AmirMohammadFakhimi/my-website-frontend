@@ -8,6 +8,11 @@
     display: inline;
 }
 
+.show-more-text-headline {
+    font: 700 1.2rem Kalam, sans-serif;
+    color: yellow;
+}
+
 .show-more-less {
     font: 300 1.1rem Kalam, sans-serif;
     color: #6180fb;

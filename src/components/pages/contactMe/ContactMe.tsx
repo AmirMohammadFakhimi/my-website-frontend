@@ -1,7 +1,7 @@
 import React from "react";
 import './ContactMe.css'
-import HeaderTitle from "../utils/headerTitle/HeaderTitle";
-import {getCV, getResume} from "../../global/ApiCalls";
+import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
+import {getCV, getResume} from "../../../global/ApiCalls";
 
 function ContactMe() {
     const socialMedia: {

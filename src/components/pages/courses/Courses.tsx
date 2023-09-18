@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import "./Courses.css";
-import HeaderTitle from "../utils/headerTitle/HeaderTitle";
-import {onAxiosError, onAxiosSuccess} from "../../global/Errors";
-import {getCourses} from "../../global/ApiCalls";
+import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
+import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
+import {getCourses} from "../../../global/ApiCalls";
 
 function Courses() {
     type CoursesType = {

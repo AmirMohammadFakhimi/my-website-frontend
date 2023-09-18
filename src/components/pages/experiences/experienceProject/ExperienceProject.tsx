@@ -1,7 +1,7 @@
 import React from "react";
 import "./ExperienceProject.css";
-import {ProjectType} from "../../../global/Types";
-import CustomShowMoreText from "../../utils/customShowMoreText/CustomShowMoreText";
+import {ProjectType} from "../../../../global/Types";
+import CustomShowMoreText from "../../../utils/customShowMoreText/CustomShowMoreText";
 
 function ExperienceProject({index, project}: { index: number, project: ProjectType }) {
     return (

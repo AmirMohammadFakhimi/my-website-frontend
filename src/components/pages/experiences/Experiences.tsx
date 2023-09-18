@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import './Experiences.css';
-import HeaderTitle from "../utils/headerTitle/HeaderTitle";
-import InfoTile from "../utils/infoTile/InfoTile";
-import Divider from "../utils/divider/Divider";
-import {ProjectType} from "../../global/Types";
+import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
+import InfoTile from "../../utils/infoTile/InfoTile";
+import Divider from "../../utils/divider/Divider";
+import {ProjectType} from "../../../global/Types";
 import ExperienceProject from "./experienceProject/ExperienceProject";
-import {getExperiences} from "../../global/ApiCalls";
-import {onAxiosError, onAxiosSuccess} from "../../global/Errors";
+import {getExperiences} from "../../../global/ApiCalls";
+import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
 function Experiences() {
     type EmploymentType =

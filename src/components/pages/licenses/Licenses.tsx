@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import "./Licenses.css";
-import HeaderTitle from "../utils/headerTitle/HeaderTitle";
-import InfoTile from "../utils/infoTile/InfoTile";
-import Divider from "../utils/divider/Divider";
-import {getLicenses} from "../../global/ApiCalls";
-import {onAxiosError, onAxiosSuccess} from "../../global/Errors";
+import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
+import InfoTile from "../../utils/infoTile/InfoTile";
+import Divider from "../../utils/divider/Divider";
+import {getLicenses} from "../../../global/ApiCalls";
+import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
 function Licenses() {
     type LicensesType = {
