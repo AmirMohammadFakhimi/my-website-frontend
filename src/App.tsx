@@ -1,17 +1,18 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import {Route, Routes, useNavigate} from "react-router-dom";
-import AboutMe from "./components/aboutMe/AboutMe";
+import AboutMe from "./components/pages/aboutMe/AboutMe";
 import Header from "./components/header/Header";
 import {urls} from "./global/Variables";
-import Educations from "./components/educations/Educations";
+import Educations from "./components/pages/educations/Educations";
 import {getMenuItemUrl} from "./global/Storages";
-import Experiences from "./components/experiences/Experiences";
-import Volunteering from "./components/volunteering/Volunteering";
-import Projects from "./components/projects/Projects";
-import Courses from "./components/courses/Courses";
-import Licenses from "./components/licenses/Licenses";
-import ContactMe from "./components/contactMe/ContactMe";
+import Experiences from "./components/pages/experiences/Experiences";
+import Volunteering from "./components/pages/volunteering/Volunteering";
+import Projects from "./components/pages/projects/Projects";
+import Courses from "./components/pages/courses/Courses";
+import Licenses from "./components/pages/licenses/Licenses";
+import ContactMe from "./components/pages/contactMe/ContactMe";
+import NextPrevButton from "./components/nextPrevButton/NextPrevButton";
 
 function App() {
     const navigate = useNavigate()
@@ -35,6 +36,8 @@ function App() {
                 <Route path={urls.licenses} element={<Licenses/>}/>
                 <Route path={urls.contactMe} element={<ContactMe/>}/>
             </Routes>
+
+            <NextPrevButton/>
         </div>
     );
 }

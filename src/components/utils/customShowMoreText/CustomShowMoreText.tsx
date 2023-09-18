@@ -2,9 +2,10 @@ import React from "react";
 import './CustomShowMoreText.css'
 
 
-function CustomShowMoreText({character = 100, className, children}: {
+function CustomShowMoreText({character = 100, className, headline, children}: {
     character?: number,
-    className: string,
+    className?: string,
+    headline?: string,
     children?: string
 }) {
     const [isShowMore, setIsShowMore] = React.useState(false)
@@ -13,6 +14,13 @@ function CustomShowMoreText({character = 100, className, children}: {
     return (
         <div className={`custom-show-more-text ${className}`}>
             <div className={`show-more-text ${className}`}>
+                {
+                    headline !== undefined &&
+                    <div className={'show-more-text-headline'}>
+                        {headline}
+                        <br/>
+                    </div>
+                }
                 {children !== undefined && children.length > character ?
                     (isShowMore ? children : children.substring(0, character) + '...') :
                     children}

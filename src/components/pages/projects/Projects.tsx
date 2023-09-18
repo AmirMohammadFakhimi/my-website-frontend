@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import './Projects.css'
-import HeaderTitle from "../utils/headerTitle/HeaderTitle";
-import InfoTileInfoPart from "../utils/infoTile/infoTileInfoPart/InfoTileInfoPart";
-import InfoTileLogoPart from "../utils/infoTile/infoTileLogoPart/InfoTileLogoPart";
-import {onAxiosError, onAxiosSuccess} from "../../global/Errors";
-import {getProjects} from "../../global/ApiCalls";
+import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
+import InfoTileInfoPart from "../../utils/infoTile/infoTileInfoPart/InfoTileInfoPart";
+import InfoTileLogoPart from "../../utils/infoTile/infoTileLogoPart/InfoTileLogoPart";
+import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
+import {getProjects} from "../../../global/ApiCalls";
 
 const Projects = () => {
     type ProjectsType = {

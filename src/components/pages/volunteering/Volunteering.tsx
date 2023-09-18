@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import './Volunteering.css'
-import HeaderTitle from "../utils/headerTitle/HeaderTitle";
-import InfoTile from "../utils/infoTile/InfoTile";
-import {getVolunteering} from "../../global/ApiCalls";
-import {onAxiosError, onAxiosSuccess} from "../../global/Errors";
+import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
+import InfoTile from "../../utils/infoTile/InfoTile";
+import {getVolunteering} from "../../../global/ApiCalls";
+import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
 const Volunteering = () => {
     type CauseType = 'Animal Welfare'
@@ -93,7 +93,8 @@ const Volunteering = () => {
                     <InfoTile index={index} title={volunteering.role} subtitle={volunteering.company}
                               startDate={volunteering.startDate} endDate={volunteering.endDate}
                               underDate={volunteering.cause}
-                              description={volunteering.instructor ? 'Instructor: ' + volunteering.instructor + '\n' + volunteering.description : volunteering.description}
+                              descriptionHeadline={volunteering.instructor ? 'Instructor: ' + volunteering.instructor : undefined}
+                              description={volunteering.description}
                               logoUrl={volunteering.logoUrl} websiteUrl={volunteering.websiteUrl}
                               isFullWidth={true} isAddTopPadding={true}/>
                 ))}

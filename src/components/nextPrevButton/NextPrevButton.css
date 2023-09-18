@@ -1,0 +1,38 @@
+#next-prev-button {
+    font: 700 1.5rem Kalam;
+    display: flex;
+    justify-content: center;
+    /*color: #61dafb;*/
+    margin-top: 80px;
+}
+
+#prev-button, #next-button {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    cursor: pointer;
+    padding-top: 10px;
+    border-top: 2px solid gold;
+}
+
+#prev-button:hover, #next-button:hover {
+    color: #349ce3;
+    text-decoration: underline;
+}
+
+#prev-button {
+    padding-right: 1rem;
+    justify-content: end;
+}
+
+#prev-button-text {
+    margin-left: 0.5rem;
+}
+
+#next-button {
+    padding-left: 1rem;
+}
+
+#next-button-text {
+    margin-right: 0.5rem
+}

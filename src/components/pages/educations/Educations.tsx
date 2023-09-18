@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './Educations.css';
-import HeaderTitle from "../utils/headerTitle/HeaderTitle";
-import InfoTile from "../utils/infoTile/InfoTile";
-import Divider from "../utils/divider/Divider";
-import {getEducations} from "../../global/ApiCalls";
-import {onAxiosError, onAxiosSuccess} from "../../global/Errors";
+import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
+import InfoTile from "../../utils/infoTile/InfoTile";
+import Divider from "../../utils/divider/Divider";
+import {getEducations} from "../../../global/ApiCalls";
+import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
 function Educations() {
     type EducationsType = {

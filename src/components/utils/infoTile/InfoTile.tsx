@@ -11,6 +11,7 @@ function InfoTile({
                       startDate,
                       endDate,
                       underDate,
+                      descriptionHeadline,
                       description,
                       skills,
                       logoUrl,
@@ -27,6 +28,7 @@ function InfoTile({
     startDate: Date,
     endDate?: Date | 'Present',
     underDate?: string,
+    descriptionHeadline?: string,
     description?: string,
     skills?: string[],
     logoUrl: string,
@@ -42,7 +44,8 @@ function InfoTile({
             <div className={'tile-container-except-image'} style={{width: isFullWidth ? '100%' : '50%'}}>
                 <InfoTileLogoPart title={title} logoUrl={logoUrl} websiteUrl={websiteUrl}/>
                 <InfoTileInfoPart title={title} subtitle={subtitle} startDate={startDate} endDate={endDate}
-                                  underDate={underDate} description={description} skills={skills} websiteUrl={websiteUrl}>
+                                  underDate={underDate} descriptionHeadline={descriptionHeadline}
+                                  description={description} skills={skills} websiteUrl={websiteUrl}>
                     {children}
                 </InfoTileInfoPart>
             </div>
