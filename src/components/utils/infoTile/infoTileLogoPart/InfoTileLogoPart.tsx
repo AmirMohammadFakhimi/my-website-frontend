@@ -1,5 +1,6 @@
 import React from "react";
 import './InfoTileLogoPart.css'
+import LoadableImage from "../../loadableImage/LoadableImage";
 
 function InfoTileLogoPart({title, logoUrl, websiteUrl, className}: {
     title: string,
@@ -9,7 +10,7 @@ function InfoTileLogoPart({title, logoUrl, websiteUrl, className}: {
 }) {
     return (
         <a className={'tile-logo-link'} href={websiteUrl} target={'_blank'} rel="noreferrer">
-            <img className={`tile-logo ${className}`} src={logoUrl} alt={title}/>
+            <LoadableImage className={`tile-logo ${className}`} src={logoUrl} alt={title}/>
         </a>
     )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import "./InfoTile.css";
 import InfoTileInfoPart from "./infoTileInfoPart/InfoTileInfoPart";
 import InfoTileLogoPart from "./infoTileLogoPart/InfoTileLogoPart";
+import LoadableImage from "../loadableImage/LoadableImage";
 
 
 function InfoTile({
@@ -52,10 +53,9 @@ function InfoTile({
             {
                 imageUrl &&
                 <a className={'tile-image-link'} href={imageRedirectUrl} target={'_blank'} rel="noreferrer">
-                    <img className={'tile-image'} src={imageUrl} alt={'Certificate'}/>
+                    <LoadableImage className={'tile-image'} src={imageUrl} alt={'Certificate'}/>
                 </a>
             }
-
         </div>
     )
 }

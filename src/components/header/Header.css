@@ -18,7 +18,6 @@
     display: flex;
     width: fit-content;
     align-items: center;
-
 }
 
 #header-logo {
@@ -29,6 +28,7 @@
 #name-slogan {
     display: flex;
     flex-direction: column;
+    text-align: start;
     margin-left: 10px;
     height: fit-content;
     width: fit-content;
@@ -42,38 +42,18 @@
     font: 500 0.9rem Merienda, cursive;
 }
 
-#menu {
-    display: flex;
-    align-items: center;
-    color: white;
-    font: 700 1.05rem Kalam, sans-serif;
-}
 
-.menu-item {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    height: fit-content;
-    width: fit-content;
-    color: white;
-    cursor: pointer;
-    border-bottom: rgba(68, 67, 67, 0.52) 2px solid;
-    padding-bottom: 5px;
-}
+@media only screen and (max-width: 1024px) {
+    #header {
+        padding-left: 10px;
+        padding-right: 20px;
+    }
 
-.menu-item-selected {
-    border-bottom-color: yellow;
-}
+    #header-name {
+        font-size: 1rem;
+    }
 
-#contact-me-header {
-    color: yellow;
-}
-
-#contact-me-header:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-}
-
-#contact-me-header:not(:hover) {
-    transition: transform 0.2s ease-in-out;
+    #header-slogan {
+        font-size: 0.8rem;
+    }
 }
