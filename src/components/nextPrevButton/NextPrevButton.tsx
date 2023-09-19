@@ -40,22 +40,22 @@ function NextPrevButton() {
         <div id={'next-prev-button'}>
             <div id={'prev-button'} onClick={() => handleMenuItemClick(prevMenuItem)}>
                 {prevMenuItem !== undefined &&
-                    <>
+                    <div id={'prev-button-container'}>
                         <ArrowBackIosRoundedIcon/>
                         <div id={'prev-button-text'}>
                             {prevMenuItem}
                         </div>
-                    </>
+                    </div>
                 }
             </div>
             <div id={'next-button'} onClick={() => handleMenuItemClick(nextMenuItem)}>
                 {nextMenuItem !== undefined &&
-                    <>
+                    <div id={'next-button-container'}>
                         <div id={'next-button-text'}>
                             {nextMenuItem}
                         </div>
                         <ArrowForwardIosRoundedIcon/>
-                    </>
+                    </div>
                 }
             </div>
         </div>
