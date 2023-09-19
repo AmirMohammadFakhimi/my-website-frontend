@@ -9,12 +9,17 @@
     display: flex;
     align-items: center;
     width: 30%;
-    cursor: pointer;
     padding-top: 10px;
     border-top: 2px solid gold;
 }
 
-#prev-button:hover, #next-button:hover {
+#prev-button-container, #next-button-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#prev-button-container:hover, #next-button-container:hover {
     color: #349ce3;
     text-decoration: underline;
 }
