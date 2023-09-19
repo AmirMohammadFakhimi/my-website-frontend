@@ -55,7 +55,7 @@ function Courses() {
     }, [])
 
     return (
-        <div id={'courses'}>
+        <div>
             <HeaderTitle text={'Courses'}/>
             <ul id={'courses-list'}>
                 {courses.map((course, index) => (

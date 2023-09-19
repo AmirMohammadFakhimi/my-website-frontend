@@ -92,7 +92,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
     #contact-me-body {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;

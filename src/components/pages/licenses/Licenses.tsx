@@ -64,9 +64,9 @@ function Licenses() {
 
 
     return (
-        <div className={'licenses'}>
+        <div id={'licenses'}>
             <HeaderTitle text={'Licenses & Certifications'}/>
-            <div className={'licenses-container'}>
+            <div id={'licenses-container'}>
                 {licenses.map((license, index) => (
                     <>
                         <InfoTile index={index} title={license.title}

@@ -26,3 +26,14 @@
 #volunteering-container > div:nth-child(even):last-child {
     border-bottom: none;
 }
+
+
+@media only screen and (max-width: 1201px) {
+    #volunteering-container {
+        grid-template-columns: 1fr;
+    }
+
+    #volunteering-container > div:nth-child(odd) {
+        border-right: none;
+    }
+}
