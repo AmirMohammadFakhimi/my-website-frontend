@@ -39,7 +39,7 @@ export function onAxiosError({
     console.log(axiosError.response)
 
     if (!axiosError.response || !axiosError.response.data)
-        enqueueSnackbar('خطا در ارتباط با سرور', {variant: 'error'})
+        enqueueSnackbar('Server Connection Error', {variant: 'error'})
     else
         enqueueSnackbar(axiosError.response.data.userMessage, {variant: 'error'})
 
