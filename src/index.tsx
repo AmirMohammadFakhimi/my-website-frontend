@@ -32,8 +32,7 @@ root.render(
                     <IconButton id={'alert-button'} onClick={() => closeSnackbar(snackbarKey)}>
                         <ArrowCircleDownTwoToneIcon htmlColor={'white'}/>
                     </IconButton>
-                )} iconVariant={getIconVariant()} maxSnack={5} TransitionProps={{direction: 'up'}}
-                                  style={{direction: 'rtl'}}>
+                )} iconVariant={getIconVariant()} maxSnack={5} TransitionProps={{direction: 'up'}}>
                     <App/>
                 </SnackbarProvider>
             </BrowserRouter>

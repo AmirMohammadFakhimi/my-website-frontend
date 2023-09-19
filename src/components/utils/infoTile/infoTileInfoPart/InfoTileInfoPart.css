@@ -4,13 +4,13 @@
     align-items: start;
     margin-left: 30px;
     width: 100%;
+    text-align: start;
 }
 
 .tile-title {
     font: 700 2rem Kalam, sans-serif;
     color: gold;
     text-decoration: underline;
-    text-align: start;
 }
 
 .tile-title:hover {
