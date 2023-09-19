@@ -1,0 +1,18 @@
+#mobile-menu {
+    display: none;
+}
+
+#mobile-menu-button {
+    color: white;
+}
+
+#mobile-menu-icon {
+    font-size: 30px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #mobile-menu {
+        display: inline;
+    }
+}

@@ -2,8 +2,7 @@ import axios from "axios";
 
 const customAxios = axios.create(
     {
-        baseURL: process.env.NODE_ENV === 'development' ?
-            process.env.REACT_APP_LOCAL_ADDRESS : process.env.REACT_APP_SERVER_ADDRESS,
+        baseURL: process.env.REACT_APP_SERVER_ADDRESS,
         timeout: 5000,
     }
 );
