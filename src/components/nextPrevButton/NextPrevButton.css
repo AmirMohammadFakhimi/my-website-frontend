@@ -38,18 +38,24 @@
 }
 
 
-@media only screen and (max-width: 1201px) {
+@media only screen and (max-width: 1200px) {
     #next-prev-button {
         margin-top: 40px;
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
     #next-prev-button {
         font-size: 1.3rem;
     }
 
     #prev-button, #next-button {
         width: 40%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #next-prev-button {
+        font-size: 1.1rem;
     }
 }

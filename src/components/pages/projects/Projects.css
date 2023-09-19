@@ -40,7 +40,7 @@
 }
 
 
-@media only screen and (max-width: 1201px) {
+@media only screen and (max-width: 1200px) {
     #projects-container {
         grid-template-columns: 1fr;
         padding: 0;
@@ -59,7 +59,7 @@
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
     .project {
         flex-direction: column;
     }
