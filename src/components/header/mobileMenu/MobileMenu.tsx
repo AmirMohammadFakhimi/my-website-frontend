@@ -64,8 +64,9 @@ function MobileMenu({selectedMenuItem, setSelectedMenuItem}: {
                     },
                 }}
             >
-                {menuItems.map((option) => (
-                    <MenuItem key={option.id} selected={option.url === selectedMenuItem} onClick={handleClose(option)}
+                {menuItems.map((menuItem) => (
+                    <MenuItem key={menuItem.id} id={menuItem.id === 8 ? 'mobile-contact-me-header' : ''}
+                              selected={menuItem.url === selectedMenuItem} onClick={handleClose(menuItem)}
                               sx={{
                                   font: '700 1.1rem Kalam, sans-serif',
                                   '&:hover': {
@@ -75,7 +76,7 @@ function MobileMenu({selectedMenuItem, setSelectedMenuItem}: {
                                       backgroundColor: 'rgba(97,128,251,0.66)',
                                   }
                               }}>
-                        {option.name}
+                        {menuItem.name}
                     </MenuItem>
                 ))}
             </Menu>

@@ -55,24 +55,24 @@ function ContactMe() {
         <div>
             <HeaderTitle text={'Contact Me'}/>
             <div id={'contact-me-body'}>
-                <div>
-                    <p className={'contact-me-text'}>
+                <div id={'contact-me-text'}>
+                    <p>
                         I'd love to hear from you! Whether it's for collaboration, a friendly chat, or if you have any
                         questions, don't hesitate to reach out. Feel free to drop me a message, and I'll get back to you
                         as
                         soon as possible.
                     </p>
-                    <p className={'contact-me-text'}>
+                    <p>
                         Looking to explore my qualifications in more detail? You can download my <a href={getCV()}
                                                                                                     className={'file-download'}
                                                                                                     download={true}>CV</a> and <a
                         href={getResume()} className={'file-download'} download={true}>Resume</a> :)
                     </p>
-                    <p id={'contact-me-last-text'} className={'contact-me-text'}>
+                    <p id={'contact-me-last-text'}>
                         Let's connect and explore new opportunities together!
                     </p>
                 </div>
-                <div>
+                <div id={'social-media-container'}>
                     <HeaderTitle text={'Social Media'} className={'social-media-title'}/>
                     <ul id={'social-media-list'}>
                         {socialMedia.map((socialMediaItem, index) => (

@@ -43,7 +43,7 @@
 }
 
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1024px) {
     #header {
         padding-left: 10px;
         padding-right: 20px;
