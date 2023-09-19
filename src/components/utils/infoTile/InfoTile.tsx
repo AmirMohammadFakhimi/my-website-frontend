@@ -42,7 +42,7 @@ function InfoTile({
 }) {
     return (
         <div key={index} className={'tile-container'} style={{paddingTop: isAddTopPadding ? '30px' : '0'}}>
-            <div className={'tile-container-except-image'} style={{width: isFullWidth ? '100%' : '50%'}}>
+            <div className={'tile-container-except-image'} style={{width: isFullWidth ? '100%' : ''}}>
                 <InfoTileLogoPart title={title} logoUrl={logoUrl} websiteUrl={websiteUrl}/>
                 <InfoTileInfoPart title={title} subtitle={subtitle} startDate={startDate} endDate={endDate}
                                   underDate={underDate} descriptionHeadline={descriptionHeadline}

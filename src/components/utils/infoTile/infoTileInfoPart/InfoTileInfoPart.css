@@ -64,3 +64,30 @@
     font: 400 1.2rem Kalam, sans-serif;
     text-align: start;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .tile-info {
+        margin-left: 0;
+    }
+
+    .tile-title {
+        font-size: 1.5rem;
+    }
+
+    .tile-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .tile-date {
+        margin-top: 0;
+    }
+
+    .tile-skills-title {
+        font-size: 1.4rem;
+    }
+
+    .tile-skills {
+        font-size: 1rem !important;
+    }
+}
