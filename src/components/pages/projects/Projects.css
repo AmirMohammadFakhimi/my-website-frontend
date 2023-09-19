@@ -38,3 +38,33 @@
     border-radius: 10px;
     margin-top: 10px;
 }
+
+
+@media only screen and (max-width: 1201px) {
+    #projects-container {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    #projects-container > div:nth-child(odd) {
+        border-right: none;
+    }
+
+    .project {
+        padding-left: 3%;
+        margin-left: 2%;
+
+        padding-right: 3%;
+        margin-right: 2%;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .project {
+        flex-direction: column;
+    }
+
+    .project:first-of-type {
+        padding-top: 0;
+    }
+}

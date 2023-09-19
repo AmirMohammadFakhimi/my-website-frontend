@@ -35,3 +35,42 @@
     font: 400 1.3rem Kalam, sans-serif;
     margin-top: -3px;
 }
+
+
+@media only screen and (max-width: 1025px) {
+    #courses-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    #courses-list {
+        grid-template-columns: 1fr;
+    }
+
+    .course {
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+    }
+
+    .course:last-of-type {
+        border-bottom: none;
+    }
+
+    .course-title {
+        font-size: 1.6rem;
+    }
+
+    .course-number {
+        font-size: 1.2rem;
+    }
+
+    .course-grade {
+        font-size: 1.2rem;
+    }
+
+    .course-associated-with {
+        font-size: 1.1rem;
+        margin-top: 0;
+    }
+}

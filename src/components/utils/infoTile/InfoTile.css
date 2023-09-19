@@ -37,7 +37,8 @@
     opacity: 0.3;
 }
 
-@media only screen and (max-width: 1024px) {
+
+@media only screen and (max-width: 1201px) {
     .tile-container {
         flex-direction: column;
     }
@@ -66,7 +67,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
     .tile-container-except-image {
         flex-direction: column;
     }
