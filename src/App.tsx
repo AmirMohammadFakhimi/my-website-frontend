@@ -13,6 +13,14 @@ import Courses from "./components/pages/courses/Courses";
 import Licenses from "./components/pages/licenses/Licenses";
 import ContactMe from "./components/pages/contactMe/ContactMe";
 import NextPrevButton from "./components/nextPrevButton/NextPrevButton";
+import TagManager from 'react-gtm-module'
+
+
+declare global {
+    interface Window {
+        dataLayer: any;
+    }
+}
 
 function App() {
     const navigate = useNavigate()
@@ -20,6 +28,14 @@ function App() {
     useEffect(() => {
         navigate(getMenuItemUrl())
     }, [])
+
+
+    window.dataLayer.push({
+        event: 'pageview'
+    });
+    useEffect(() => {
+        TagManager.initialize({gtmId: 'GTM-N8K5BXLN'});
+    }, []);
 
     return (
         <div className="App">
