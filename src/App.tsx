@@ -16,12 +16,6 @@ import NextPrevButton from "./components/nextPrevButton/NextPrevButton";
 import TagManager from 'react-gtm-module'
 
 
-declare global {
-    interface Window {
-        dataLayer: any;
-    }
-}
-
 function App() {
     const navigate = useNavigate()
 
@@ -30,9 +24,6 @@ function App() {
     }, [])
 
 
-    window.dataLayer.push({
-        event: 'pageview'
-    });
     useEffect(() => {
         TagManager.initialize({gtmId: 'GTM-N8K5BXLN'});
     }, []);
