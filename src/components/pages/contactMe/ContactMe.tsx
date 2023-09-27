@@ -15,9 +15,9 @@ function ContactMe() {
             url: 'https://maps.google.com/?q=Tehran,+Tehran+Province,+Iran&ftid=0x3f8e00491ff3dcd9:0xf0b3697c567024bc',
         },
         {
-            name: 'Mobile Number',
-            text: '+98 913 163 6804',
-            url: 'tel:+989131636804',
+            name: 'Telegram',
+            text: '@AmirMohammadFakhimi',
+            url: 'https://t.me/AmirMohammadFakhimi',
         },
         {
             name: 'University Email',
@@ -30,11 +30,6 @@ function ContactMe() {
             url: 'mailto:fakhimi.amirmohamad@gmail.com',
         },
         {
-            name: 'Telegram',
-            text: '@AmirMohammadFakhimi',
-            url: 'https://t.me/AmirMohammadFakhimi',
-        },
-        {
             name: 'GitHub',
             text: 'AmirMohammadFakhimi',
             url: 'https://github.com/AmirMohammadFakhimi',
@@ -45,10 +40,15 @@ function ContactMe() {
             url: 'https://linkedin.com/in/amir-mohammad-fakhimi',
         },
         {
+            name: 'Medium',
+            text: 'amirmohammadfakhimi',
+            url: 'https://amirmohammadfakhimi.medium.com',
+        },
+        {
             name: 'Stack Overflow',
             text: 'amir-mohammad-fakhimi',
             url: 'https://stackoverflow.com/users/14840048/amir-mohammad-fakhimi',
-        }
+        },
     ]
 
     return (
