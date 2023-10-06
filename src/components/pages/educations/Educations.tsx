@@ -85,6 +85,7 @@ function Educations() {
                             <InfoTile index={index} title={education.name}
                                       subtitle={`${education.degree} in ${education.field}`}
                                       startDate={education.startDate} endDate={education.endDate}
+                                      
                                       underDate={`Grade: ${education.myGrade} / ${education.maxGrade}`}
                                       skills={education.skills}
                                       logoUrl={education.logoUrl} websiteUrl={education.websiteUrl}

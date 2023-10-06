@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import './Projects.css'
 import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTileInfoPart from "../../utils/infoTile/infoTileInfoPart/InfoTileInfoPart";
-import InfoTileLogoPart from "../../utils/infoTile/infoTileLogoPart/InfoTileLogoPart";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import {getProjects} from "../../../global/ApiCalls";
 
@@ -72,8 +71,6 @@ const Projects = () => {
             <div id={'projects-container'}>
                 {projects.map((project, index) => (
                     <div key={index} className={'project'}>
-                        <InfoTileLogoPart title={project.title} logoUrl={project.logoUrl}
-                                          websiteUrl={project.projectUrl} className={'project-logo'}/>
                         <InfoTileInfoPart title={project.title}
                                           subtitle={project.associateWith ? 'Associated with ' + project.associateWith : undefined}
                                           startDate={project.startDate} endDate={project.endDate}
