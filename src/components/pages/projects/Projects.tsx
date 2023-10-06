@@ -13,7 +13,6 @@ const Projects = () => {
         associateWith?: string,
         description: string,
         skills: string[],
-        logoUrl: string,
         projectUrl: string,
     }[]
 
@@ -25,7 +24,6 @@ const Projects = () => {
             associate_with?: string,
             description: string,
             skills: string[],
-            logo_url: string,
             project_url: string,
         }[]
     }
@@ -44,7 +42,6 @@ const Projects = () => {
                 associateWith: project.associate_with,
                 description: project.description,
                 skills: project.skills,
-                logoUrl: project.logo_url,
                 projectUrl: project.project_url
             })
         })
