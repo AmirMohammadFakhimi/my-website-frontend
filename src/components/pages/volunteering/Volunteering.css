@@ -36,4 +36,8 @@
     #volunteering-container > div:nth-child(odd) {
         border-right: none;
     }
+
+    #volunteering-container > div:nth-last-child(2):nth-child(odd) {
+        border-bottom: 2px solid #444;
+    }
 }

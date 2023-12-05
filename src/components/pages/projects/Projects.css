@@ -50,6 +50,10 @@
         border-right: none;
     }
 
+    #projects-container > div:nth-last-child(2):nth-child(odd) {
+        border-bottom: 2px solid #444;
+    }
+
     .project {
         padding-left: 3%;
         margin-left: 2%;
