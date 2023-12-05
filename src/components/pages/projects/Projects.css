@@ -18,11 +18,11 @@
     border-bottom: 2px solid #444;
 }
 
-#projects-container > div:nth-child(odd):last-child {
+#projects-container > div:last-child {
     border-bottom: none;
 }
 
-#projects-container > div:nth-child(even):last-child {
+#projects-container > div:nth-last-child(2):nth-child(odd) {
     border-bottom: none;
 }
 

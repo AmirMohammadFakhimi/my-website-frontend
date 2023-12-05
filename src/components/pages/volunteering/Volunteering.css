@@ -19,11 +19,11 @@
     border-bottom: 2px solid #444;
 }
 
-#volunteering-container > div:nth-child(odd):last-child {
+#volunteering-container > div:last-child {
     border-bottom: none;
 }
 
-#volunteering-container > div:nth-child(even):last-child {
+#volunteering-container > div:nth-last-child(2):nth-child(odd) {
     border-bottom: none;
 }
 
