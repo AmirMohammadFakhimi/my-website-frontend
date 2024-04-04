@@ -26,7 +26,7 @@ function CustomShowMoreText({character = 100, className, headline, children}: {
                     children}
             </div>
             {
-                children !== undefined && children.length > character &&
+                children && children.length > character &&
                 <div className={'show-more-less'}
                      onClick={() => setIsShowMore(!isShowMore)}>
                     {isShowMore ? 'Show less' : 'Show more'}
