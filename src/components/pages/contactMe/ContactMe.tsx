@@ -26,8 +26,8 @@ function ContactMe() {
         },
         {
             name: 'Personal Email',
-            text: 'fakhimi.amirmohamad@gmail.com',
-            url: 'mailto:fakhimi.amirmohamad@gmail.com',
+            text: 'research@amfakhimi.com',
+            url: 'mailto:research@amfakhimi.com',
         },
         {
             name: 'GitHub',
