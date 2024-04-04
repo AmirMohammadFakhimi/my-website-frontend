@@ -8,7 +8,7 @@ function InfoTileInfoPart({
                               startDate,
                               endDate,
                               underDate,
-    descriptionHeadline,
+                              descriptionHeadline,
                               description,
                               skills,
                               websiteUrl,
