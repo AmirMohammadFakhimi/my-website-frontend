@@ -28,7 +28,7 @@ const Volunteering = () => {
         startDate: Date,
         endDate: Date | 'Present',
         description: string,
-        instructor?: string,
+        supervisor?: string,
         logoUrl: string,
         websiteUrl: string,
     }[]
@@ -41,7 +41,7 @@ const Volunteering = () => {
             start_date: Date,
             end_date: Date | 'Present',
             description: string,
-            instructor?: string,
+            supervisor?: string,
             logo_url: string,
             website_url: string,
         }[]
@@ -62,7 +62,7 @@ const Volunteering = () => {
                 startDate: new Date(volunteering.start_date),
                 endDate: volunteering.end_date === 'Present' ? 'Present' : new Date(volunteering.end_date),
                 description: volunteering.description,
-                instructor: volunteering.instructor,
+                supervisor: volunteering.supervisor,
                 logoUrl: volunteering.logo_url,
                 websiteUrl: volunteering.website_url
             })
@@ -93,7 +93,7 @@ const Volunteering = () => {
                     <InfoTile index={index} title={volunteering.role} subtitle={volunteering.company}
                               startDate={volunteering.startDate} endDate={volunteering.endDate}
                               underDate={volunteering.cause}
-                              descriptionHeadline={volunteering.instructor ? 'Instructor: ' + volunteering.instructor : undefined}
+                              descriptionHeadline={volunteering.supervisor ? volunteering.supervisor : undefined}
                               description={volunteering.description}
                               logoUrl={volunteering.logoUrl} websiteUrl={volunteering.websiteUrl}
                               isFullWidth={true} isAddTopPadding={true}/>
