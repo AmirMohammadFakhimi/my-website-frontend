@@ -15,13 +15,13 @@ function CustomShowMoreText({character = 100, className, headline, children}: {
         <div className={`custom-show-more-text ${className}`}>
             <div className={`show-more-text ${className}`}>
                 {
-                    headline !== undefined &&
+                    headline &&
                     <div className={'show-more-text-headline'}>
                         {headline}
                         <br/>
                     </div>
                 }
-                {children !== undefined && children.length > character ?
+                {children && children.length > character ?
                     (isShowMore ? children : children.substring(0, character) + '...') :
                     children}
             </div>
