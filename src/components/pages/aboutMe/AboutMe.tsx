@@ -70,7 +70,7 @@ function AboutMe() {
                     the {getLink('Rahnema College summer boot camp', 'https://rahnemacollege.com')} in
                     2022. There, I had the opportunity to acquire a wealth of knowledge, with a particular highlight
                     being my involvement in the {getBold('Frontend')} development of
-                    the {getLink('final experienceProject', 'https://github.com/Rahnema-College-SU/Football-Fantasy-FrontEnd')}.
+                    the {getLink('final project', 'https://github.com/Rahnema-College-SU/Football-Fantasy-FrontEnd')}.
                     This experience added
                     another layer to my skill set and fueled my thirst for growth.
                 </p>
