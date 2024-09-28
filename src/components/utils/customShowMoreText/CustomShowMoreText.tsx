@@ -2,7 +2,7 @@ import React from "react";
 import './CustomShowMoreText.css'
 
 
-function CustomShowMoreText({character = 100, className, headline, children}: {
+function CustomShowMoreText({character = 200, className, headline, children}: {
     character?: number,
     className?: string,
     headline?: string,

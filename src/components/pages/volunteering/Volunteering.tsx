@@ -94,7 +94,7 @@ const Volunteering = () => {
                               startDate={volunteering.startDate} endDate={volunteering.endDate}
                               underDate={volunteering.cause}
                               descriptionHeadline={volunteering.supervisor ? volunteering.supervisor : undefined}
-                              description={volunteering.description}
+                              description={volunteering.description} characterLimit={100}
                               logoUrl={volunteering.logoUrl} websiteUrl={volunteering.websiteUrl}
                               isFullWidth={true} isAddTopPadding={true}/>
                 ))}

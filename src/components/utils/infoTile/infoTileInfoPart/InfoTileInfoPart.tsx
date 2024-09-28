@@ -11,6 +11,7 @@ function InfoTileInfoPart({
                               descriptionHeadline,
                               description,
                               skills,
+                              characterLimit,
                               websiteUrl,
                               children,
                           }: {
@@ -22,6 +23,7 @@ function InfoTileInfoPart({
     descriptionHeadline?: string,
     description?: string,
     skills?: string[],
+    characterLimit?: number,
     websiteUrl: string,
     children?: React.ReactNode,
 }) {
@@ -60,12 +62,12 @@ function InfoTileInfoPart({
             {getDateText(startDate, endDate)}
             <div
                 className={'tile-under-date'}>{underDate}</div>
-            <CustomShowMoreText className={'tile-description'} headline={descriptionHeadline}>
+            <CustomShowMoreText className={'tile-description'} character={characterLimit} headline={descriptionHeadline}>
                 {description}
             </CustomShowMoreText>
             <div className={'tile-skills-container'}>
                 {skills && <div className={'tile-skills-title'}>Skills:</div>}
-                <CustomShowMoreText className={'tile-skills'}>
+                <CustomShowMoreText character={characterLimit} className={'tile-skills'}>
                     {skills?.join(', ')}
                 </CustomShowMoreText>
             </div>

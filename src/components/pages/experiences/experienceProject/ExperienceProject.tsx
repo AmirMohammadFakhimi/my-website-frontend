@@ -9,9 +9,11 @@ function ExperienceProject({index, project}: { index: number, project: ProjectTy
             <a className={'experience-project-title'} href={project.projectUrl} target={'_blank'} rel="noreferrer">
                 {project.title}
             </a>
-            <CustomShowMoreText className={'experience-project-description'}>
-                {project.description}
-            </CustomShowMoreText>
+            {project.description &&
+                <CustomShowMoreText character={50} className={'experience-project-description'}>
+                    {project.description}
+                </CustomShowMoreText>
+            }
         </li>
     )
 }

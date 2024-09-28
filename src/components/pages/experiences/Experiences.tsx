@@ -113,14 +113,16 @@ function Experiences() {
                                   websiteUrl={experience.websiteUrl}
                                   imageUrl={experience.certificateUrl}
                                   imageRedirectUrl={experience.originalCertificateUrl}>
-                            <div className={'experience-projects-container'}>
-                                <div className={'experience-projects-title'}>Projects:</div>
-                                <ul className={'experience-projects'}>
-                                    {experience.projects.map((project, index) =>
-                                        <ExperienceProject index={index} project={project}/>
-                                    )}
-                                </ul>
-                            </div>
+                            {experience.projects.length > 0 &&
+                                <div className={'experience-projects-container'}>
+                                    <div className={'experience-projects-title'}>Projects:</div>
+                                    <ul className={'experience-projects'}>
+                                        {experience.projects.map((project, index) =>
+                                            <ExperienceProject index={index} project={project}/>
+                                        )}
+                                    </ul>
+                                </div>
+                            }
                         </InfoTile>
                         <Divider index={index} allCount={experiences.length}/>
                     </>

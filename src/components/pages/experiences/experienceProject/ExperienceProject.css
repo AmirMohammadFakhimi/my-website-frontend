@@ -3,7 +3,7 @@
 }
 
 .current-project:not(:first-child) {
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 .experience-project-title {
@@ -20,7 +20,6 @@
 }
 
 .experience-project-description {
-    font: 400 1.1rem sans-serif;
     margin-top: 2px;
     text-indent: 15px;
     word-spacing: 1px;
