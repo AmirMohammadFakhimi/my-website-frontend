@@ -4,6 +4,6 @@ export type ArrElement<ArrType> = ArrType extends readonly (infer ElementType)[]
 
 export type ProjectType = {
     title: string,
-    description: string,
+    description: string | null,
     projectUrl: string,
 }

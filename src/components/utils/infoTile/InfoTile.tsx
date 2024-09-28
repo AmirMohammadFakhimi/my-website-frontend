@@ -15,6 +15,7 @@ function InfoTile({
                       descriptionHeadline,
                       description,
                       skills,
+                      characterLimit,
                       logoUrl,
                       websiteUrl,
                       imageUrl,
@@ -32,6 +33,7 @@ function InfoTile({
     descriptionHeadline?: string,
     description?: string,
     skills?: string[],
+    characterLimit?: number,
     logoUrl: string,
     websiteUrl: string,
     imageUrl?: string,
@@ -46,7 +48,8 @@ function InfoTile({
                 <InfoTileLogoPart title={title} logoUrl={logoUrl} websiteUrl={websiteUrl}/>
                 <InfoTileInfoPart title={title} subtitle={subtitle} startDate={startDate} endDate={endDate}
                                   underDate={underDate} descriptionHeadline={descriptionHeadline}
-                                  description={description} skills={skills} websiteUrl={websiteUrl}>
+                                  description={description} characterLimit={characterLimit} skills={skills}
+                                  websiteUrl={websiteUrl}>
                     {children}
                 </InfoTileInfoPart>
             </div>
