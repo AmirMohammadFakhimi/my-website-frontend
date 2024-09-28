@@ -10,28 +10,44 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
 }) {
     const [isShowMore, setIsShowMore] = React.useState(false)
 
+    function getMoreLessButton() {
+        return children && children.length > character &&
+            <div className={'show-more-less'}
+                 onClick={() => setIsShowMore(!isShowMore)}>
+                {isShowMore ? 'Show less' : 'Show more'}
+            </div>
+    }
+
+    function addDivTagToText(text: string) {
+        const elements = text.split('\n')
+        const elementsLength = elements.length
+
+        return elements.map((item, key) => {
+            if (key === elementsLength - 1)
+                return <div key={key}>{item}{getMoreLessButton()}</div>
+            else
+                return <div key={key}>{item}<br/></div>
+        })
+    }
+
 
     return (
         <div className={`custom-show-more-text ${className}`}>
             <div className={`show-more-text ${className}`}>
-                {
-                    headline &&
+                {headline &&
                     <div className={'show-more-text-headline'}>
                         {headline}
                         <br/>
                     </div>
                 }
                 {children && children.length > character ?
-                    (isShowMore ? children : children.substring(0, character) + '...') :
-                    children}
+                    (isShowMore ?
+                        addDivTagToText(children)
+                        :
+                        addDivTagToText(children.substring(0, character) + '...')) :
+                    children
+                }
             </div>
-            {
-                children && children.length > character &&
-                <div className={'show-more-less'}
-                     onClick={() => setIsShowMore(!isShowMore)}>
-                    {isShowMore ? 'Show less' : 'Show more'}
-                </div>
-            }
         </div>
     )
 }
