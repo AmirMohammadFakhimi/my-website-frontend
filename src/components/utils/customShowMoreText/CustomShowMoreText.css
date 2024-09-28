@@ -27,6 +27,10 @@
     text-decoration: none;
 }
 
+.custom-bold {
+    text-decoration: underline;
+}
+
 span {
     display: inline;
 }

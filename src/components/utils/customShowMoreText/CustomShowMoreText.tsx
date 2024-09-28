@@ -10,6 +10,15 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
 }) {
     const [isShowMore, setIsShowMore] = React.useState(false)
 
+    function parseMarkdown(text: string) {
+        return text.split('**').map((item, key) => {
+            if (key % 2 === 0)
+                return item
+            else
+                return <strong className={'custom-bold'} key={key}>{item}</strong>
+        })
+    }
+
     function getMoreLessButton() {
         return children && children.length > character &&
             <div className={'show-more-less'}
@@ -24,9 +33,9 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
 
         return elements.map((item, key) => {
             if (key === elementsLength - 1)
-                return <div key={key}>{item}{getMoreLessButton()}</div>
+                return <div key={key}>{parseMarkdown(item)}{getMoreLessButton()}</div>
             else
-                return <div key={key}>{item}<br/></div>
+                return <div key={key}>{parseMarkdown(item)}<br/></div>
         })
     }
 
@@ -45,7 +54,8 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
                         addDivTagToText(children)
                         :
                         addDivTagToText(children.substring(0, character) + '...')) :
-                    children
+
+                    children && addDivTagToText(children)
                 }
             </div>
         </div>
