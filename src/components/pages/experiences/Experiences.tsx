@@ -3,8 +3,8 @@ import './Experiences.css';
 import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTile from "../../utils/infoTile/InfoTile";
 import Divider from "../../utils/divider/Divider";
-import {ProjectType} from "../../../global/Types";
-import ExperienceProject from "./experienceProject/ExperienceProject";
+import {MediaType} from "../../../global/Types";
+import ExperienceMedia from "./experienceMedia/ExperienceMedia";
 import {getExperiences} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
@@ -35,7 +35,7 @@ function Experiences() {
         websiteUrl: string,
         certificateUrl?: string,
         originalCertificateUrl?: string,
-        projects: ProjectType[]
+        medias: MediaType[]
     }[]
 
     type ExperiencesResponseType = {
@@ -53,7 +53,7 @@ function Experiences() {
             website_url: string,
             certificate_url?: string,
             original_certificate_url?: string,
-            projects: ProjectType[]
+            medias: MediaType[]
         }[]
     }
 
@@ -78,7 +78,7 @@ function Experiences() {
                 websiteUrl: experience.website_url,
                 certificateUrl: experience.certificate_url,
                 originalCertificateUrl: experience.original_certificate_url,
-                projects: experience.projects
+                medias: experience.medias
             })
         })
 
@@ -113,12 +113,12 @@ function Experiences() {
                                   websiteUrl={experience.websiteUrl}
                                   imageUrl={experience.certificateUrl}
                                   imageRedirectUrl={experience.originalCertificateUrl}>
-                            {experience.projects.length > 0 &&
-                                <div className={'experience-projects-container'}>
-                                    <div className={'experience-projects-title'}>Links:</div>
-                                    <ul className={'experience-projects'}>
-                                        {experience.projects.map((project, index) =>
-                                            <ExperienceProject index={index} project={project}/>
+                            {experience.medias.length > 0 &&
+                                <div className={'experience-medias-container'}>
+                                    <div className={'experience-medias-title'}>Links:</div>
+                                    <ul className={'experience-medias'}>
+                                        {experience.medias.map((media, index) =>
+                                            <ExperienceMedia index={index} media={media}/>
                                         )}
                                     </ul>
                                 </div>
