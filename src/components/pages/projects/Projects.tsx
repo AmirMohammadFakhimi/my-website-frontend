@@ -46,7 +46,6 @@ const Projects = () => {
             })
         })
 
-        console.log(response)
         return newProjects
     }
 

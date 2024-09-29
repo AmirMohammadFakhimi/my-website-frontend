@@ -26,7 +26,7 @@ const Volunteering = () => {
         company: string,
         role: string,
         cause: CauseType,
-        label: string,
+        label: string[],
         startDate: Date,
         endDate: Date | 'Present',
         description?: string,
@@ -40,7 +40,7 @@ const Volunteering = () => {
             company: string,
             role: string,
             cause: CauseType,
-            label: string,
+            label: string[],
             start_date: Date,
             end_date: Date | 'Present',
             description?: string,
@@ -87,14 +87,25 @@ const Volunteering = () => {
                             setVolunteering(convertedResponse)
                             setFilteredVolunteering(convertedResponse)
 
-                            const filtersSet = new Set<string>()
-                            convertedResponse.forEach(volunteering =>
-                                filtersSet.add(volunteering.label))
-                            filtersSet.delete('All')
-                            filtersSet.delete('Other')
+
+                            const filtersSet = convertedResponse.reduce((acc, volunteering) => {
+                                volunteering.label.forEach(label => acc.add(label));
+                                return acc;
+                            }, new Set<string>());
+
                             const isOtherInFilters = filtersSet.has('Other')
-                            setFilters(['All', ...Array.from(filtersSet).sort(),
-                                ...(isOtherInFilters ? ['Other'] : [])])
+                            const isHighlightsInFilters = filtersSet.has('Highlights')
+
+                            filtersSet.delete('All')
+                            filtersSet.delete('Highlights')
+                            filtersSet.delete('Other')
+
+                            setFilters([
+                                'All',
+                                ...(isHighlightsInFilters ? ['Highlights'] : []),
+                                ...Array.from(filtersSet).sort(),
+                                ...(isOtherInFilters ? ['Other'] : [])
+                            ])
                         }
                     }),
                 error =>
@@ -106,7 +117,8 @@ const Volunteering = () => {
         if (filter === 'All')
             setFilteredVolunteering(volunteering)
         else {
-            const filteredVolunteering = volunteering.filter(volunteering => volunteering.label === filter)
+            const filteredVolunteering = volunteering.filter(volunteering =>
+                volunteering.label.includes(filter))
             setFilteredVolunteering(filteredVolunteering)
         }
     }
