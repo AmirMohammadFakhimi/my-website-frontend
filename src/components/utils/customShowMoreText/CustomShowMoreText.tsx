@@ -11,12 +11,14 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
     const [isShowMore, setIsShowMore] = React.useState(false)
 
     function parseMarkdown(text: string) {
-        return text.split('**').map((item, key) => {
-            if (key % 2 === 0)
-                return item
-            else
-                return <strong className={'custom-bold'} key={key}>{item}</strong>
-        })
+        // convert **text** to <strong>text</strong>
+        text = text.replace(/(\*\*)(.*?)\1/g, '<strong class="custom-bold">$2</strong>')
+
+        // convert [text](url) to <a href="url">text</a>
+        text = text.replace(/\[(.*?)]\((.*?)\)/g,
+            '<a href="$2" target="_blank" class="custom-link" rel="noreferrer">$1</a>')
+
+        return <span dangerouslySetInnerHTML={{__html: text}}/>
     }
 
     function getMoreLessButton() {
