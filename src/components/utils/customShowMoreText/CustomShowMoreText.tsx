@@ -41,6 +41,25 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
         })
     }
 
+    function getUntilCharacterIfNotBetweenMarkdown(text: string) {
+        text = text.substring(0, character)
+        const boldCount = (text.match(/\*\*/g) || []).length
+        const linkCount = (text.match(/\[/g) || []).length
+
+        if (boldCount % 2 === 0 && linkCount % 2 === 0) {
+            return text
+        } else if (boldCount % 2 === 1 && linkCount % 2 === 0) {
+            return text + '**'
+        } else if (boldCount % 2 === 0 && linkCount % 2 === 1) {
+            const lastLinkIndex = text.lastIndexOf('[')
+            return text.substring(0, lastLinkIndex)
+        } else {
+            const boldIndex = text.indexOf('**')
+            const lastLinkIndex = text.lastIndexOf('[')
+            return text.substring(0, Math.min(boldIndex, lastLinkIndex))
+        }
+    }
+
 
     return (
         <div className={`custom-show-more-text ${className}`}>
@@ -55,7 +74,7 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
                     (isShowMore ?
                         addDivTagToText(children)
                         :
-                        addDivTagToText(children.substring(0, character) + '...')) :
+                        addDivTagToText(getUntilCharacterIfNotBetweenMarkdown(children) + '...')) :
 
                     children && addDivTagToText(children)
                 }
