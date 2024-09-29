@@ -10,7 +10,7 @@ function DesktopMenu({selectedMenuItem, setSelectedMenuItem}: {
     return (
         <ul id={'desktop-menu'}>
             {menuItems.map(menuItem => {
-                return <li key={menuItem.id} id={menuItem.id === 8 ? 'contact-me-header' : ''}
+                return <li key={menuItem.id} id={menuItem.id === menuItems.length ? 'contact-me-header' : ''}
                            className={'desktop-menu-item ' + (selectedMenuItem === menuItem.url ? 'desktop-menu-item-selected' : '')}
                            onClick={() => setSelectedMenuItem(menuItem.url)}>
                     {menuItem.name}
