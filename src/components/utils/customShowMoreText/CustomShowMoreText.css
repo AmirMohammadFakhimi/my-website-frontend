@@ -31,6 +31,20 @@
     text-decoration: underline;
 }
 
+.custom-link {
+    text-decoration: underline;
+    font-weight: 700;
+    color: #3f66fd;
+}
+
+.custom-link:hover {
+    color: #3f48fd;
+}
+
+.custom-link:visited {
+    color: rgba(114, 130, 159, 0.82);
+}
+
 span {
     display: inline;
 }

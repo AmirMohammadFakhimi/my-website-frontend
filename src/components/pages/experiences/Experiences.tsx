@@ -115,7 +115,7 @@ function Experiences() {
                                   imageRedirectUrl={experience.originalCertificateUrl}>
                             {experience.projects.length > 0 &&
                                 <div className={'experience-projects-container'}>
-                                    <div className={'experience-projects-title'}>Projects:</div>
+                                    <div className={'experience-projects-title'}>Links:</div>
                                     <ul className={'experience-projects'}>
                                         {experience.projects.map((project, index) =>
                                             <ExperienceProject index={index} project={project}/>
