@@ -5,6 +5,7 @@ import InfoTile from "../../utils/infoTile/InfoTile";
 import {getVolunteering} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import Filter from "../../utils/filter/Filter";
+import ExperienceMedia from "../experiences/experienceMedia/ExperienceMedia";
 
 function Volunteering() {
     type CauseType = 'Animal Welfare'
@@ -29,7 +30,7 @@ function Volunteering() {
         company: string,
         role: string,
         cause: CauseType,
-        label: LabelType[],
+        labels: LabelType[],
         startDate: Date,
         endDate: Date | 'Present',
         description?: string,
@@ -43,7 +44,7 @@ function Volunteering() {
             company: string,
             role: string,
             cause: CauseType,
-            label: LabelType[],
+            labels: LabelType[],
             start_date: Date,
             end_date: Date | 'Present',
             description?: string,
@@ -73,7 +74,7 @@ function Volunteering() {
                 supervisor: volunteering.supervisor,
                 logoUrl: volunteering.logo_url,
                 websiteUrl: volunteering.website_url,
-                label: volunteering.label
+                labels: volunteering.labels
             })
         })
 
@@ -92,7 +93,7 @@ function Volunteering() {
 
 
                             const filtersSet: Set<FilterType> = convertedResponse.reduce((acc, volunteering) => {
-                                volunteering.label.forEach(label => acc.add(label));
+                                volunteering.labels.forEach(label => acc.add(label));
                                 return acc;
                             }, new Set<FilterType>());
 
@@ -123,7 +124,7 @@ function Volunteering() {
             setFilteredVolunteering(volunteering)
         else {
             const filteredVolunteering = volunteering.filter(volunteering =>
-                volunteering.label.includes(filterWithFilterType))
+                volunteering.labels.includes(filterWithFilterType))
             setFilteredVolunteering(filteredVolunteering)
         }
     }
@@ -142,7 +143,18 @@ function Volunteering() {
                               descriptionHeadline={volunteering.supervisor ? volunteering.supervisor : undefined}
                               description={volunteering.description} characterLimit={100}
                               logoUrl={volunteering.logoUrl} websiteUrl={volunteering.websiteUrl}
-                              isFullWidth={true} isAddTopPadding={true}/>
+                              isFullWidth={true} isAddTopPadding={true}>
+                        {/*{volunteering.labels.length > 0 &&*/}
+                        {/*        <div className={'experience-medias-container'}>*/}
+                        {/*            <div className={'experience-medias-title'}>Links:</div>*/}
+                        {/*            <ul className={'experience-medias'}>*/}
+                        {/*                {volunteering.labels.map((media, index) =>*/}
+                        {/*                    <ExperienceMedia index={index} media={media}/>*/}
+                        {/*                )}*/}
+                        {/*            </ul>*/}
+                        {/*        </div>*/}
+                        {/*    }*/}
+                    </InfoTile>
                 ))}
             </div>
         </div>
