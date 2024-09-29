@@ -6,7 +6,7 @@ import {getVolunteering} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import Filter from "../../utils/filter/Filter";
 
-const Volunteering = () => {
+function Volunteering() {
     type CauseType = 'Animal Welfare'
         | 'Arts and Culture'
         | 'Children'
@@ -22,11 +22,14 @@ const Volunteering = () => {
         | 'Social Services'
         | 'Veteran Support'
 
+    type LabelType = 'Events' | 'Teaching Assistants (TAs)' | 'Others' | 'Highlights'
+    type FilterType = 'All' | LabelType
+
     type VolunteeringType = {
         company: string,
         role: string,
         cause: CauseType,
-        label: string[],
+        label: LabelType[],
         startDate: Date,
         endDate: Date | 'Present',
         description?: string,
@@ -40,7 +43,7 @@ const Volunteering = () => {
             company: string,
             role: string,
             cause: CauseType,
-            label: string[],
+            label: LabelType[],
             start_date: Date,
             end_date: Date | 'Present',
             description?: string,
@@ -52,7 +55,7 @@ const Volunteering = () => {
 
     const [volunteering, setVolunteering] = useState<VolunteeringType>([])
     const [filteredVolunteering, setFilteredVolunteering] = useState<VolunteeringType>([])
-    const [filters, setFilters] = useState<string[]>([])
+    const [filters, setFilters] = useState<FilterType[]>([])
 
     function convertVolunteeringResponse(response: VolunteeringResponseType): VolunteeringType {
         console.log(response)
@@ -88,23 +91,23 @@ const Volunteering = () => {
                             setFilteredVolunteering(convertedResponse)
 
 
-                            const filtersSet = convertedResponse.reduce((acc, volunteering) => {
+                            const filtersSet: Set<FilterType> = convertedResponse.reduce((acc, volunteering) => {
                                 volunteering.label.forEach(label => acc.add(label));
                                 return acc;
-                            }, new Set<string>());
+                            }, new Set<FilterType>());
 
-                            const isOtherInFilters = filtersSet.has('Other')
+                            const isOtherInFilters = filtersSet.has('Others')
                             const isHighlightsInFilters = filtersSet.has('Highlights')
 
                             filtersSet.delete('All')
                             filtersSet.delete('Highlights')
-                            filtersSet.delete('Other')
+                            filtersSet.delete('Others')
 
                             setFilters([
                                 'All',
-                                ...(isHighlightsInFilters ? ['Highlights'] : []),
+                                ...(isHighlightsInFilters ? ['Highlights' as FilterType] : []),
                                 ...Array.from(filtersSet).sort(),
-                                ...(isOtherInFilters ? ['Other'] : [])
+                                ...(isOtherInFilters ? ['Highlights' as FilterType] : [])
                             ])
                         }
                     }),
@@ -114,11 +117,13 @@ const Volunteering = () => {
     }, [])
 
     function onFilterChanged(filter: string) {
-        if (filter === 'All')
+        const filterWithFilterType = filter as FilterType
+
+        if (filterWithFilterType === 'All')
             setFilteredVolunteering(volunteering)
         else {
             const filteredVolunteering = volunteering.filter(volunteering =>
-                volunteering.label.includes(filter))
+                volunteering.label.includes(filterWithFilterType))
             setFilteredVolunteering(filteredVolunteering)
         }
     }
