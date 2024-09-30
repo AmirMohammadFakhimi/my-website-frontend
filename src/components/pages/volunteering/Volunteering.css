@@ -32,6 +32,15 @@
     border-bottom: none;
 }
 
+.volunteering-medias {
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+.volunteering-media-description {
+    font-size: 1.1rem;
+}
+
 
 @media only screen and (max-width: 1200px) {
     #volunteering-container {

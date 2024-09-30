@@ -4,17 +4,3 @@
     flex-direction: column;
     font-family: Kalam, sans-serif;
 }
-
-.experience-medias-container {
-    margin-top: 30px;
-    text-align: start;
-}
-
-.experience-medias-title {
-    font: 700 1.5rem Kalam, sans-serif;
-}
-
-.experience-medias {
-    margin-block-start: 10px;
-    margin-block-end: 0;
-}
