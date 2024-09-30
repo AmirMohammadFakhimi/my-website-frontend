@@ -5,7 +5,8 @@ import InfoTile from "../../utils/infoTile/InfoTile";
 import {getVolunteering} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import Filter from "../../utils/filter/Filter";
-import ExperienceMedia from "../experiences/experienceMedia/ExperienceMedia";
+import MediaTile from "../../utils/MediaTile/MediaTile";
+import {MediaType} from "../../../global/Types";
 
 function Volunteering() {
     type CauseType = 'Animal Welfare'
@@ -37,6 +38,7 @@ function Volunteering() {
         supervisor?: string,
         logoUrl: string,
         websiteUrl: string,
+        medias: MediaType[]
     }[]
 
     type VolunteeringResponseType = {
@@ -51,6 +53,7 @@ function Volunteering() {
             supervisor?: string,
             logo_url: string,
             website_url: string,
+            medias: MediaType[]
         }[]
     }
 
@@ -59,7 +62,6 @@ function Volunteering() {
     const [filters, setFilters] = useState<FilterType[]>([])
 
     function convertVolunteeringResponse(response: VolunteeringResponseType): VolunteeringType {
-        console.log(response)
         const currentVolunteering = response.volunteering
         const newVolunteering: VolunteeringType = []
 
@@ -74,7 +76,8 @@ function Volunteering() {
                 supervisor: volunteering.supervisor,
                 logoUrl: volunteering.logo_url,
                 websiteUrl: volunteering.website_url,
-                labels: volunteering.labels
+                labels: volunteering.labels,
+                medias: volunteering.medias
             })
         })
 
@@ -144,16 +147,8 @@ function Volunteering() {
                               description={volunteering.description} characterLimit={100}
                               logoUrl={volunteering.logoUrl} websiteUrl={volunteering.websiteUrl}
                               isFullWidth={true} isAddTopPadding={true}>
-                        {/*{volunteering.labels.length > 0 &&*/}
-                        {/*        <div className={'experience-medias-container'}>*/}
-                        {/*            <div className={'experience-medias-title'}>Links:</div>*/}
-                        {/*            <ul className={'experience-medias'}>*/}
-                        {/*                {volunteering.labels.map((media, index) =>*/}
-                        {/*                    <ExperienceMedia index={index} media={media}/>*/}
-                        {/*                )}*/}
-                        {/*            </ul>*/}
-                        {/*        </div>*/}
-                        {/*    }*/}
+                        <MediaTile medias={volunteering.medias} containerClassName={'volunteering-medias'}
+                                   descriptionClassName={'volunteering-media-description'}/>
                     </InfoTile>
                 ))}
             </div>

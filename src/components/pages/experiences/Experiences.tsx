@@ -4,7 +4,7 @@ import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTile from "../../utils/infoTile/InfoTile";
 import Divider from "../../utils/divider/Divider";
 import {MediaType} from "../../../global/Types";
-import ExperienceMedia from "./experienceMedia/ExperienceMedia";
+import MediaTile from "../../utils/MediaTile/MediaTile";
 import {getExperiences} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
@@ -113,16 +113,7 @@ function Experiences() {
                                   websiteUrl={experience.websiteUrl}
                                   imageUrl={experience.certificateUrl}
                                   imageRedirectUrl={experience.originalCertificateUrl}>
-                            {experience.medias.length > 0 &&
-                                <div className={'experience-medias-container'}>
-                                    <div className={'experience-medias-title'}>Links:</div>
-                                    <ul className={'experience-medias'}>
-                                        {experience.medias.map((media, index) =>
-                                            <ExperienceMedia index={index} media={media}/>
-                                        )}
-                                    </ul>
-                                </div>
-                            }
+                            <MediaTile medias={experience.medias}/>
                         </InfoTile>
                         <Divider index={index} allCount={experiences.length}/>
                     </>
