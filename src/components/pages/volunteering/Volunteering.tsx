@@ -7,6 +7,7 @@ import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import Filter from "../../utils/filter/Filter";
 import MediaTile from "../../utils/MediaTile/MediaTile";
 import {MediaType} from "../../../global/Types";
+import TotalTile from "../../utils/totalTile/TotalTile";
 
 function Volunteering() {
     type CauseType = 'Animal Welfare'
@@ -25,7 +26,6 @@ function Volunteering() {
         | 'Veteran Support'
 
     type LabelType = 'Events' | 'Teaching Assistants (TAs)' | 'Others' | 'Highlights'
-    type FilterType = 'All' | LabelType
 
     type VolunteeringType = {
         company: string,
@@ -59,7 +59,6 @@ function Volunteering() {
 
     const [volunteering, setVolunteering] = useState<VolunteeringType>([])
     const [filteredVolunteering, setFilteredVolunteering] = useState<VolunteeringType>([])
-    const [filters, setFilters] = useState<FilterType[]>([])
 
     function convertVolunteeringResponse(response: VolunteeringResponseType): VolunteeringType {
         const currentVolunteering = response.volunteering
@@ -93,26 +92,6 @@ function Volunteering() {
                             const convertedResponse = convertVolunteeringResponse(response.data)
                             setVolunteering(convertedResponse)
                             setFilteredVolunteering(convertedResponse)
-
-
-                            const filtersSet: Set<FilterType> = convertedResponse.reduce((acc, volunteering) => {
-                                volunteering.labels.forEach(label => acc.add(label));
-                                return acc;
-                            }, new Set<FilterType>());
-
-                            const isOtherInFilters = filtersSet.has('Others')
-                            const isHighlightsInFilters = filtersSet.has('Highlights')
-
-                            filtersSet.delete('All')
-                            filtersSet.delete('Highlights')
-                            filtersSet.delete('Others')
-
-                            setFilters([
-                                'All',
-                                ...(isHighlightsInFilters ? ['Highlights' as FilterType] : []),
-                                ...Array.from(filtersSet).sort(),
-                                ...(isOtherInFilters ? ['Highlights' as FilterType] : [])
-                            ])
                         }
                     }),
                 error =>
@@ -120,24 +99,12 @@ function Volunteering() {
             )
     }, [])
 
-    function onFilterChanged(filter: string) {
-        const filterWithFilterType = filter as FilterType
-
-        if (filterWithFilterType === 'All')
-            setFilteredVolunteering(volunteering)
-        else {
-            const filteredVolunteering = volunteering.filter(volunteering =>
-                volunteering.labels.includes(filterWithFilterType))
-            setFilteredVolunteering(filteredVolunteering)
-        }
-    }
-
 
     return (
         <div>
             <HeaderTitle text={'Volunteering'} className={'volunteering-header'}/>
-            <HeaderTitle text={`Total: ${filteredVolunteering.length}`} className={'volunteering-total'}/>
-            <Filter filters={filters} onFilterChanged={onFilterChanged}/>
+            <TotalTile total={filteredVolunteering.length}/>
+            <Filter values={volunteering} setFilteredValues={setFilteredVolunteering}/>
             <div id={'volunteering-container'}>
                 {filteredVolunteering.map((volunteering, index) => (
                     <InfoTile index={index} title={volunteering.role} subtitle={volunteering.company}
