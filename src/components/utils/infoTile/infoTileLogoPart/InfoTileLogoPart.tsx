@@ -9,7 +9,7 @@ function InfoTileLogoPart({title, logoUrl, websiteUrl, className}: {
     className?: string
 }) {
     return (
-        <a className={'tile-logo-link'} href={websiteUrl} target={'_blank'} rel="noreferrer">
+        <a className={'tile-logo-link'} href={websiteUrl} target={'_blank'} rel='noreferrer'>
             <LoadableImage className={`tile-logo ${className}`} src={logoUrl} alt={title}/>
         </a>
     )

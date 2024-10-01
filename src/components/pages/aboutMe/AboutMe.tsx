@@ -20,7 +20,7 @@ function AboutMe() {
 
     function getLink(text: string, link: string) {
         return <a className={'about-me-link'} href={link}
-                  target={'_blank'} rel="noreferrer">{getBold(text)}</a>
+                  target={'_blank'} rel='noreferrer'>{getBold(text)}</a>
     }
 
     return (
