@@ -49,13 +49,13 @@
 
     .tile-container-except-image {
         padding-right: 40px;
-        padding-bottom: 40px;
     }
 
     .tile-image-link {
         max-width: 80%;
         width: auto;
         max-height: 400px;
+        margin-top: 40px;
     }
 
     .tile-image {
