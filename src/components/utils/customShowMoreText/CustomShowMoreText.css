@@ -11,6 +11,7 @@
 .show-more-text-headline {
     font: 700 1.2rem Kalam, sans-serif;
     color: yellow;
+    text-align: start;
 }
 
 .show-more-less {
