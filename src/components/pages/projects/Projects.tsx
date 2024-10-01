@@ -4,8 +4,12 @@ import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTileInfoPart from "../../utils/infoTile/infoTileInfoPart/InfoTileInfoPart";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import {getProjects} from "../../../global/ApiCalls";
+import Filter from "../../utils/filter/Filter";
+import TotalTile from "../../utils/totalTile/TotalTile";
 
 const Projects = () => {
+    type LabelType = 'Highlights' | 'Others'
+
     type ProjectsType = {
         title: string,
         startDate: Date,
@@ -14,6 +18,7 @@ const Projects = () => {
         description: string,
         skills: string[],
         projectUrl: string,
+        labels: LabelType[]
     }[]
 
     type ProjectsResponseType = {
@@ -25,10 +30,12 @@ const Projects = () => {
             description: string,
             skills: string[],
             project_url: string,
+            labels: LabelType[]
         }[]
     }
 
     const [projects, setProjects] = useState<ProjectsType>([])
+    const [filteredProjects, setFilteredProjects] = useState<ProjectsType>([])
 
     function convertProjectsResponse(response: ProjectsResponseType): ProjectsType {
         const currentProjects = response.projects
@@ -42,7 +49,8 @@ const Projects = () => {
                 associateWith: project.associate_with,
                 description: project.description,
                 skills: project.skills,
-                projectUrl: project.project_url
+                projectUrl: project.project_url,
+                labels: project.labels
             })
         })
 
@@ -54,7 +62,11 @@ const Projects = () => {
             .then(
                 response =>
                     onAxiosSuccess({
-                        res: response, onSuccess: () => setProjects(convertProjectsResponse(response.data))
+                        res: response, onSuccess: () => {
+                            const convertedResponse = convertProjectsResponse(response.data)
+                            setProjects(convertedResponse)
+                            setFilteredProjects(convertedResponse)
+                        }
                     }),
                 error =>
                     onAxiosError({axiosError: error})
@@ -63,9 +75,11 @@ const Projects = () => {
 
     return (
         <div id={'projects'}>
-            <HeaderTitle text={'Projects'}/>
+            <HeaderTitle text={'Projects'} className={'projects-header'}/>
+            <TotalTile total={filteredProjects.length}/>
+            <Filter values={projects} setFilteredValues={setFilteredProjects}/>
             <div id={'projects-container'}>
-                {projects.map((project, index) => (
+                {filteredProjects.map((project, index) => (
                     <div key={index} className={'project'}>
                         <InfoTileInfoPart title={project.title}
                                           subtitle={project.associateWith ? 'Associated with ' + project.associateWith : undefined}
