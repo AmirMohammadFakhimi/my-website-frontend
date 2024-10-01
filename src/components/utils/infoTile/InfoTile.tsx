@@ -30,7 +30,7 @@ function InfoTile({
     startDate: Date,
     endDate?: Date | 'Present',
     underDate?: string,
-    descriptionHeadline?: string,
+    descriptionHeadline?: string | React.ReactNode,
     description?: string,
     skills?: string[],
     characterLimit?: number,
@@ -55,7 +55,7 @@ function InfoTile({
             </div>
             {
                 imageUrl &&
-                <a className={'tile-image-link'} href={imageRedirectUrl} target={'_blank'} rel="noreferrer">
+                <a className={'tile-image-link'} href={imageRedirectUrl} target={'_blank'} rel='noreferrer'>
                     <LoadableImage className={'tile-image'} src={imageUrl} alt={'Certificate'}/>
                 </a>
             }

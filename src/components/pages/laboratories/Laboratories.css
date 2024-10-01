@@ -1,0 +1,27 @@
+.laboratory-supervisors {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    text-indent: 0;
+}
+
+.laboratory-supervisor {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.laboratory-supervisor::marker {
+    color: #6180fb;
+}
+
+.laboratory-link {
+    text-decoration: underline;
+    color: #6180fb;
+}
+
+.laboratory-link:hover {
+    color: yellow;
+}
+
+.laboratory-link:visited {
+    color: darkgoldenrod;
+}

@@ -5,7 +5,7 @@ import './CustomShowMoreText.css'
 function CustomShowMoreText({character = 200, className, headline, children}: {
     character?: number,
     className?: string,
-    headline?: string,
+    headline?: string | React.ReactNode,
     children?: string
 }) {
     const [isShowMore, setIsShowMore] = React.useState(false)

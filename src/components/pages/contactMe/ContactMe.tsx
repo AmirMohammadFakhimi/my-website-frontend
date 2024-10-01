@@ -79,7 +79,7 @@ function ContactMe() {
                             <li key={index} className={'social-media-item'}>
                                 <div className={'social-media-name'}>{socialMediaItem.name}:</div>
                                 <a className={'social-media-link'} href={socialMediaItem.url} target={'_blank'}
-                                   rel="noreferrer">
+                                   rel='noreferrer'>
                                     <div className={'social-media-text'}>{socialMediaItem.text}</div>
                                 </a>
                             </li>

@@ -11,6 +11,8 @@ export const getEducations = () => customAxios.get('educations')
 
 export const getExperiences = () => customAxios.get('experiences')
 
+export const getLaboratories = () => customAxios.get('laboratories')
+
 export const getVolunteering = () => customAxios.get('volunteering')
 
 export const getProjects = () => customAxios.get('projects')

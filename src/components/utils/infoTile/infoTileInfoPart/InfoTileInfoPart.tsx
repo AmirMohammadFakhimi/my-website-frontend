@@ -20,7 +20,7 @@ function InfoTileInfoPart({
     startDate: Date,
     endDate?: Date | 'Present',
     underDate?: string,
-    descriptionHeadline?: string,
+    descriptionHeadline?: string | React.ReactNode,
     description?: string,
     skills?: string[],
     characterLimit?: number,
@@ -54,7 +54,7 @@ function InfoTileInfoPart({
 
     return (
         <div className={'tile-info'}>
-            <a className={'tile-title'} href={websiteUrl} target={'_blank'} rel="noreferrer">
+            <a className={'tile-title'} href={websiteUrl} target={'_blank'} rel='noreferrer'>
                 {title}
             </a>
             <div
