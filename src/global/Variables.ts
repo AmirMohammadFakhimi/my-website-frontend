@@ -6,7 +6,7 @@ export const urls = {
     volunteering: 'volunteering',
     projects: 'projects',
     courses: 'courses',
-    licenses: 'licenses',
+    honorsAndCertificates: 'honors-and-certificates',
     contactMe: 'contact-me',
 }
 
@@ -22,6 +22,6 @@ export const menuItems: {
     {id: 5, name: 'Volunteering', url: urls.volunteering},
     {id: 6, name: 'Projects', url: urls.projects},
     {id: 7, name: 'Courses', url: urls.courses},
-    {id: 8, name: 'Licenses & certifications', url: urls.licenses},
+    {id: 8, name: 'Honors & Certificates', url: urls.honorsAndCertificates},
     {id: 9, name: 'Contact Me', url: urls.contactMe}
 ]

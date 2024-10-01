@@ -20,4 +20,4 @@ function DesktopMenu({selectedMenuItem, setSelectedMenuItem}: {
     )
 }
 
-export default DesktopMenu;
+export default DesktopMenu

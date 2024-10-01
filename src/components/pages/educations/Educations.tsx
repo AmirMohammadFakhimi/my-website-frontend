@@ -100,4 +100,4 @@ function Educations() {
         ;
 }
 
-export default Educations;
+export default Educations

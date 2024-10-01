@@ -76,4 +76,4 @@ function InfoTileInfoPart({
     )
 }
 
-export default InfoTileInfoPart;
+export default InfoTileInfoPart
