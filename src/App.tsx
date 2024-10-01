@@ -11,7 +11,7 @@ import Laboratories from "./components/pages/laboratories/Laboratories";
 import Volunteering from "./components/pages/volunteering/Volunteering";
 import Projects from "./components/pages/projects/Projects";
 import Courses from "./components/pages/courses/Courses";
-import Licenses from "./components/pages/licenses/Licenses";
+import HonorsAndCertificates from "./components/pages/honorsAndCertificates/HonorsAndCertificates";
 import ContactMe from "./components/pages/contactMe/ContactMe";
 import NextPrevButton from "./components/nextPrevButton/NextPrevButton";
 import TagManager from 'react-gtm-module'
@@ -41,7 +41,7 @@ function App() {
                 <Route path={urls.volunteering} element={<Volunteering/>}/>
                 <Route path={urls.projects} element={<Projects/>}/>
                 <Route path={urls.courses} element={<Courses/>}/>
-                <Route path={urls.licenses} element={<Licenses/>}/>
+                <Route path={urls.honorsAndCertificates} element={<HonorsAndCertificates/>}/>
                 <Route path={urls.contactMe} element={<ContactMe/>}/>
             </Routes>
 
@@ -50,4 +50,4 @@ function App() {
     );
 }
 
-export default App;
+export default App

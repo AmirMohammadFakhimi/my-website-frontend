@@ -83,4 +83,4 @@ function CustomShowMoreText({character = 200, className, headline, children}: {
     )
 }
 
-export default CustomShowMoreText;
+export default CustomShowMoreText

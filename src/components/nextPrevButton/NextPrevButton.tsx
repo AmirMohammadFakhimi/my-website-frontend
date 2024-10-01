@@ -62,4 +62,4 @@ function NextPrevButton() {
     )
 }
 
-export default NextPrevButton;
+export default NextPrevButton

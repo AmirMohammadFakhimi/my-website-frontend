@@ -123,4 +123,4 @@ function Experiences() {
     );
 }
 
-export default Experiences;
+export default Experiences

@@ -9,4 +9,4 @@ function HeaderTitle({text, className}: { text: string, className?: string }) {
     )
 }
 
-export default HeaderTitle;
+export default HeaderTitle

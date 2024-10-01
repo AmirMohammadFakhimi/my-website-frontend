@@ -15,7 +15,7 @@ function MediaTile({medias, containerClassName, descriptionClassName}: {
                     <div className={'medias-tile-title'}>Links:</div>
                     <ul className={'medias-tile'}>
 
-                        {medias.map((media, index) =>
+                        {medias.map((media) =>
                             <li className={'current-media'}>
                                 <a className={'media-tile-title'} href={media.url} target={'_blank'} rel='noreferrer'>
                                     {media.title}
@@ -36,4 +36,4 @@ function MediaTile({medias, containerClassName, descriptionClassName}: {
     )
 }
 
-export default MediaTile;
+export default MediaTile

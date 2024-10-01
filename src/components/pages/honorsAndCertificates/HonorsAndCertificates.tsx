@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-import "./Licenses.css";
+import "./HonorsAndCertificates.css";
 import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTile from "../../utils/infoTile/InfoTile";
 import Divider from "../../utils/divider/Divider";
 import {getLicenses} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
-function Licenses() {
+function HonorsAndCertificates() {
     type LicensesType = {
         title: string,
         company: string,
@@ -66,7 +66,7 @@ function Licenses() {
     return (
         <div id={'licenses'}>
             <HeaderTitle text={'Licenses & Certifications'}/>
-            <div id={'licenses-container'}>
+            <div id={'honorsAndCertificates-container'}>
                 {licenses.map((license, index) => (
                     <>
                         <InfoTile index={index} title={license.title}
@@ -85,4 +85,4 @@ function Licenses() {
     )
 }
 
-export default Licenses;
+export default HonorsAndCertificates

@@ -10,4 +10,4 @@ function Divider({index, allCount}: { index: number, allCount: number }) {
     )
 }
 
-export default Divider;
+export default Divider

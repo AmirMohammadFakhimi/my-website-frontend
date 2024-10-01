@@ -15,4 +15,4 @@ function InfoTileLogoPart({title, logoUrl, websiteUrl, className}: {
     )
 }
 
-export default InfoTileLogoPart;
+export default InfoTileLogoPart

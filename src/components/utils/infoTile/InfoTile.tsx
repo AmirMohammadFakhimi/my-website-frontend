@@ -63,4 +63,4 @@ function InfoTile({
     )
 }
 
-export default InfoTile;
+export default InfoTile
