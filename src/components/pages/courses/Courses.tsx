@@ -10,6 +10,8 @@ function Courses() {
         number: string,
         myGrade?: number,
         maxGrade?: number,
+        instructors_names: string[],
+        instructors_urls?: string[],
         associatedWith?: string,
     }[]
 
@@ -19,6 +21,8 @@ function Courses() {
             number: string,
             my_grade?: number,
             max_grade?: number,
+            instructors_names: string[],
+            instructors_urls?: string[],
             associated_with?: string,
         }[]
     }
@@ -35,6 +39,8 @@ function Courses() {
                 number: course.number,
                 myGrade: course.my_grade,
                 maxGrade: course.max_grade,
+                instructors_names: course.instructors_names,
+                instructors_urls: course.instructors_urls,
                 associatedWith: course.associated_with
             })
         })
@@ -54,6 +60,24 @@ function Courses() {
             )
     }, [])
 
+    function getInstructor(instructor_name: string, instructor_url?: string) {
+        return instructor_url ?
+            <a className={'course-instructor-link'} href={instructor_url} target={'_blank'} rel='noreferrer'>
+                {instructor_name}
+            </a>
+            :
+            instructor_name
+    }
+
+    function getInstructors(instructors_names: string[], instructors_urls?: string[]) {
+        return instructors_names.map((instructor_name, index) => (
+            <span key={index}>
+                {getInstructor(instructor_name, instructors_urls ? instructors_urls[index] : undefined)}
+                {index !== instructors_names.length - 1 ? ' & ' : ''}
+            </span>
+        ))
+    }
+
     return (
         <div>
             <HeaderTitle text={'Courses'}/>
@@ -69,6 +93,11 @@ function Courses() {
                         <div className={'course-grade'}>
                             {course.myGrade !== null && course.maxGrade !== null ?
                                 `Grade: ${course.myGrade} / ${course.maxGrade}` : ''}
+                        </div>
+                        <div className={'course-instructor'}>
+                            {course.instructors_names.length === 1 ?
+                                'Instructor: ' : 'Instructors: '}
+                            {getInstructors(course.instructors_names, course.instructors_urls)}
                         </div>
                         <div className={'course-associated-with'}>
                             {course.associatedWith ? 'Associated with ' + course.associatedWith : ''}
