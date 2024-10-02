@@ -4,7 +4,7 @@ import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import {getCourses} from "../../../global/ApiCalls";
 
-function Courses() {
+function Courses({header}: { header: string }) {
     type CoursesType = {
         title: string,
         number: string,
@@ -80,7 +80,7 @@ function Courses() {
 
     return (
         <div>
-            <HeaderTitle text={'Courses'}/>
+            <HeaderTitle text={header}/>
             <ul id={'courses-list'}>
                 {courses.map((course, index) => (
                     <li key={index} className={'course'}>

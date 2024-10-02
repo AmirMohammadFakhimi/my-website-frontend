@@ -3,7 +3,7 @@ import './App.css';
 import {Route, Routes, useNavigate} from "react-router-dom";
 import AboutMe from "./components/pages/aboutMe/AboutMe";
 import Header from "./components/header/Header";
-import {urls} from "./global/Variables";
+import {menuItems, urls} from "./global/Variables";
 import Educations from "./components/pages/educations/Educations";
 import {getMenuItemUrl} from "./global/Storages";
 import Experiences from "./components/pages/experiences/Experiences";
@@ -35,14 +35,14 @@ function App() {
 
             <Routes>
                 <Route path={urls.aboutMe} element={<AboutMe/>}/>
-                <Route path={urls.educations} element={<Educations/>}/>
-                <Route path={urls.experiences} element={<Experiences/>}/>
-                <Route path={urls.laboratories} element={<Laboratories/>}/>
-                <Route path={urls.volunteering} element={<Volunteering/>}/>
-                <Route path={urls.projects} element={<Projects/>}/>
-                <Route path={urls.courses} element={<Courses/>}/>
-                <Route path={urls.honorsAndCertificates} element={<HonorsAndCertificates/>}/>
-                <Route path={urls.contactMe} element={<ContactMe/>}/>
+                <Route path={urls.educations} element={<Educations header={menuItems[1].name}/>}/>
+                <Route path={urls.experiences} element={<Experiences header={menuItems[2].name}/>}/>
+                <Route path={urls.laboratories} element={<Laboratories header={menuItems[3].name}/>}/>
+                <Route path={urls.volunteering} element={<Volunteering header={menuItems[4].name}/>}/>
+                <Route path={urls.projects} element={<Projects header={menuItems[5].name}/>}/>
+                <Route path={urls.courses} element={<Courses header={menuItems[6].name}/>}/>
+                <Route path={urls.honorsAndCertificates} element={<HonorsAndCertificates header={menuItems[7].name}/>}/>
+                <Route path={urls.contactMe} element={<ContactMe header={menuItems[8].name}/>}/>
             </Routes>
 
             <NextPrevButton/>

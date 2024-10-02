@@ -6,7 +6,7 @@ import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTile from "../../utils/infoTile/InfoTile";
 import Divider from "../../utils/divider/Divider";
 
-function Laboratories() {
+function Laboratories({header}: { header: string }) {
     type LaboratoriesType = {
         title: string,
         company: string,
@@ -96,7 +96,7 @@ function Laboratories() {
 
     return (
         <div id={'experiences'}>
-            <HeaderTitle text={'Laboratories'}/>
+            <HeaderTitle text={header}/>
             <div className={'experiences-container'}>
                 {laboratories.map((laboratory, index) => (
                     <>

@@ -3,59 +3,60 @@ import "./HonorsAndCertificates.css";
 import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTile from "../../utils/infoTile/InfoTile";
 import Divider from "../../utils/divider/Divider";
-import {getLicenses} from "../../../global/ApiCalls";
+import {getHonorsAndCertificates} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
-function HonorsAndCertificates() {
-    type LicensesType = {
+function HonorsAndCertificates({header}: { header: string }) {
+    type HonorsAndCertificatesType = {
         title: string,
         company: string,
         issueDate: Date,
         skills: string[],
         logoUrl: string,
-        licenseUrl: string,
-        licenseImageUrl?: string,
+        honorAndCertificateUrl: string,
+        honorAndCertificateImageUrl?: string,
     }[]
 
-    type LicensesResponseType = {
-        licenses: {
+    type HonorsAndCertificatesResponseType = {
+        honors_and_certificates: {
             title: string,
             company: string,
             issue_date: Date,
             skills: string[],
             logo_url: string,
-            license_url: string,
-            license_image_url?: string,
+            honor_and_certificate_url: string,
+            honor_and_certificate_image_url?: string,
         }[]
     }
 
-    const [licenses, setLicenses] = useState<LicensesType>([])
+    const [honorsAndCertificates, setHonorsAndCertificates] =
+        useState<HonorsAndCertificatesType>([])
 
-    function convertLicensesResponse(response: LicensesResponseType): LicensesType {
-        const currentLicenses = response.licenses
-        const newLicenses: LicensesType = []
+    function convertHonorsAndCertificatesResponse(response: HonorsAndCertificatesResponseType): HonorsAndCertificatesType {
+        const currentHonorsAndCertificates = response.honors_and_certificates
+        const newHonorsAndCertificates: HonorsAndCertificatesType = []
 
-        currentLicenses.forEach(license => {
-            newLicenses.push({
-                title: license.title,
-                company: license.company,
-                issueDate: new Date(license.issue_date),
-                skills: license.skills,
-                logoUrl: license.logo_url,
-                licenseUrl: license.license_url,
-                licenseImageUrl: license.license_image_url
+        currentHonorsAndCertificates.forEach(honorAndCertificate => {
+            newHonorsAndCertificates.push({
+                title: honorAndCertificate.title,
+                company: honorAndCertificate.company,
+                issueDate: new Date(honorAndCertificate.issue_date),
+                skills: honorAndCertificate.skills,
+                logoUrl: honorAndCertificate.logo_url,
+                honorAndCertificateUrl: honorAndCertificate.honor_and_certificate_url,
+                honorAndCertificateImageUrl: honorAndCertificate.honor_and_certificate_image_url
             })
         })
 
-        return newLicenses
+        return newHonorsAndCertificates
     }
 
     useEffect(() => {
-        getLicenses()
+        getHonorsAndCertificates()
             .then(
                 response =>
                     onAxiosSuccess({
-                        res: response, onSuccess: () => setLicenses(convertLicensesResponse(response.data))
+                        res: response, onSuccess: () => setHonorsAndCertificates(convertHonorsAndCertificatesResponse(response.data))
                     }),
                 error =>
                     onAxiosError({axiosError: error})
@@ -64,20 +65,20 @@ function HonorsAndCertificates() {
 
 
     return (
-        <div id={'licenses'}>
-            <HeaderTitle text={'Licenses & Certifications'}/>
-            <div id={'honorsAndCertificates-container'}>
-                {licenses.map((license, index) => (
+        <div id={'honors-and-certificates'}>
+            <HeaderTitle text={header}/>
+            <div id={'honors-and-certificates-container'}>
+                {honorsAndCertificates.map((honorAndCertificate, index) => (
                     <>
-                        <InfoTile index={index} title={license.title}
-                                  subtitle={`${license.company}`}
-                                  startDate={license.issueDate}
-                                  skills={license.skills} logoUrl={license.logoUrl}
-                                  websiteUrl={license.licenseUrl}
-                                  imageUrl={license.licenseImageUrl}
-                                  imageRedirectUrl={license.licenseUrl}>
+                        <InfoTile index={index} title={honorAndCertificate.title}
+                                  subtitle={`${honorAndCertificate.company}`}
+                                  startDate={honorAndCertificate.issueDate}
+                                  skills={honorAndCertificate.skills} logoUrl={honorAndCertificate.logoUrl}
+                                  websiteUrl={honorAndCertificate.honorAndCertificateUrl}
+                                  imageUrl={honorAndCertificate.honorAndCertificateImageUrl}
+                                  imageRedirectUrl={honorAndCertificate.honorAndCertificateUrl}>
                         </InfoTile>
-                        <Divider index={index} allCount={licenses.length}/>
+                        <Divider index={index} allCount={honorsAndCertificates.length}/>
                     </>
                 ))}
             </div>

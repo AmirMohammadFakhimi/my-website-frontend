@@ -8,7 +8,7 @@ import MediaTile from "../../utils/MediaTile/MediaTile";
 import {getExperiences} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
-function Experiences() {
+function Experiences({header}: { header: string }) {
     type EmploymentType =
         'Full-time'
         | 'Part-time'
@@ -100,7 +100,7 @@ function Experiences() {
 
     return (
         <div id={'experiences'}>
-            <HeaderTitle text={'Experiences'}/>
+            <HeaderTitle text={header}/>
             <div className={'experiences-container'}>
                 {experiences.map((experience, index) => (
                     <>

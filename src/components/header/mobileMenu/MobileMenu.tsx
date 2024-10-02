@@ -64,7 +64,7 @@ function MobileMenu({selectedMenuItem, setSelectedMenuItem}: {
                     },
                 }}
             >
-                {menuItems.map((menuItem) => (
+                {menuItems.map(menuItem => (
                     <MenuItem key={menuItem.id} id={menuItem.id === menuItems.length ? 'mobile-contact-me-header' : ''}
                               selected={menuItem.url === selectedMenuItem} onClick={handleClose(menuItem)}
                               sx={{
