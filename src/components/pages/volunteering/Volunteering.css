@@ -1,7 +1,3 @@
-.volunteering-header {
-    margin-block-end: 0;
-}
-
 #volunteering-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

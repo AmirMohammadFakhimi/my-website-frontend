@@ -7,7 +7,6 @@ import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import Filter from "../../utils/filter/Filter";
 import MediaTile from "../../utils/MediaTile/MediaTile";
 import {MediaType} from "../../../global/Types";
-import TotalTile from "../../utils/totalTile/TotalTile";
 
 function Volunteering({header}: { header: string }) {
     type CauseType = 'Animal Welfare'
@@ -102,8 +101,7 @@ function Volunteering({header}: { header: string }) {
 
     return (
         <div>
-            <HeaderTitle text={header} className={'volunteering-header'}/>
-            <TotalTile total={filteredVolunteering.length}/>
+            <HeaderTitle text={header} total={filteredVolunteering.length}/>
             <Filter values={volunteering} setFilteredValues={setFilteredVolunteering}/>
             <div id={'volunteering-container'}>
                 {filteredVolunteering.map((volunteering, index) => (
