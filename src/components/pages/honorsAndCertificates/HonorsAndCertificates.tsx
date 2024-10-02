@@ -11,9 +11,11 @@ function HonorsAndCertificates({header}: { header: string }) {
         title: string,
         company: string,
         issueDate: Date,
-        skills: string[],
+        skills?: string[],
+        description?: string,
         logoUrl: string,
-        honorAndCertificateUrl: string,
+        websiteUrl: string,
+        honorAndCertificateUrl?: string,
         honorAndCertificateImageUrl?: string,
     }[]
 
@@ -22,9 +24,11 @@ function HonorsAndCertificates({header}: { header: string }) {
             title: string,
             company: string,
             issue_date: Date,
-            skills: string[],
+            skills?: string[],
+            description?: string,
             logo_url: string,
-            honor_and_certificate_url: string,
+            website_url: string,
+            honor_and_certificate_url?: string,
             honor_and_certificate_image_url?: string,
         }[]
     }
@@ -42,7 +46,9 @@ function HonorsAndCertificates({header}: { header: string }) {
                 company: honorAndCertificate.company,
                 issueDate: new Date(honorAndCertificate.issue_date),
                 skills: honorAndCertificate.skills,
+                description: honorAndCertificate.description,
                 logoUrl: honorAndCertificate.logo_url,
+                websiteUrl: honorAndCertificate.website_url,
                 honorAndCertificateUrl: honorAndCertificate.honor_and_certificate_url,
                 honorAndCertificateImageUrl: honorAndCertificate.honor_and_certificate_image_url
             })
@@ -56,7 +62,8 @@ function HonorsAndCertificates({header}: { header: string }) {
             .then(
                 response =>
                     onAxiosSuccess({
-                        res: response, onSuccess: () => setHonorsAndCertificates(convertHonorsAndCertificatesResponse(response.data))
+                        res: response,
+                        onSuccess: () => setHonorsAndCertificates(convertHonorsAndCertificatesResponse(response.data))
                     }),
                 error =>
                     onAxiosError({axiosError: error})
@@ -71,10 +78,10 @@ function HonorsAndCertificates({header}: { header: string }) {
                 {honorsAndCertificates.map((honorAndCertificate, index) => (
                     <>
                         <InfoTile index={index} title={honorAndCertificate.title}
-                                  subtitle={`${honorAndCertificate.company}`}
-                                  startDate={honorAndCertificate.issueDate}
-                                  skills={honorAndCertificate.skills} logoUrl={honorAndCertificate.logoUrl}
-                                  websiteUrl={honorAndCertificate.honorAndCertificateUrl}
+                                  subtitle={`${honorAndCertificate.company}`} startDate={honorAndCertificate.issueDate}
+                                  description={honorAndCertificate.description} skills={honorAndCertificate.skills}
+                                  logoUrl={honorAndCertificate.logoUrl}
+                                  websiteUrl={honorAndCertificate.websiteUrl}
                                   imageUrl={honorAndCertificate.honorAndCertificateImageUrl}
                                   imageRedirectUrl={honorAndCertificate.honorAndCertificateUrl}>
                         </InfoTile>
