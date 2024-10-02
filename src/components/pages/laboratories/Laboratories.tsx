@@ -104,8 +104,7 @@ function Laboratories({header}: { header: string }) {
                                   startDate={laboratory.startDate} endDate={laboratory.endDate}
                                   descriptionHeadline={getDescriptionHeadline(laboratory)}
                                   description={laboratory.description}
-                                  logoUrl={laboratory.logoUrl} websiteUrl={laboratory.websiteUrl}
-                                  isFullWidth={true} isAddTopPadding={true}/>
+                                  logoUrl={laboratory.logoUrl} websiteUrl={laboratory.websiteUrl}/>
                         <Divider index={index} allCount={laboratories.length}/>
                     </>
                 ))}
