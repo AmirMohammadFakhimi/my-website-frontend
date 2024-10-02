@@ -7,7 +7,7 @@ import {getProjects} from "../../../global/ApiCalls";
 import Filter from "../../utils/filter/Filter";
 import TotalTile from "../../utils/totalTile/TotalTile";
 
-const Projects = () => {
+function Projects({header}: { header: string }) {
     type LabelType = 'Highlights' | 'Others'
 
     type ProjectsType = {
@@ -75,7 +75,7 @@ const Projects = () => {
 
     return (
         <div id={'projects'}>
-            <HeaderTitle text={'Projects'} className={'projects-header'}/>
+            <HeaderTitle text={header} className={'projects-header'}/>
             <TotalTile total={filteredProjects.length}/>
             <Filter values={projects} setFilteredValues={setFilteredProjects}/>
             <div id={'projects-container'}>

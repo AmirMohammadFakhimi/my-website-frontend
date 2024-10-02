@@ -9,7 +9,7 @@ import MediaTile from "../../utils/MediaTile/MediaTile";
 import {MediaType} from "../../../global/Types";
 import TotalTile from "../../utils/totalTile/TotalTile";
 
-function Volunteering() {
+function Volunteering({header}: { header: string }) {
     type CauseType = 'Animal Welfare'
         | 'Arts and Culture'
         | 'Children'
@@ -102,7 +102,7 @@ function Volunteering() {
 
     return (
         <div>
-            <HeaderTitle text={'Volunteering'} className={'volunteering-header'}/>
+            <HeaderTitle text={header} className={'volunteering-header'}/>
             <TotalTile total={filteredVolunteering.length}/>
             <Filter values={volunteering} setFilteredValues={setFilteredVolunteering}/>
             <div id={'volunteering-container'}>

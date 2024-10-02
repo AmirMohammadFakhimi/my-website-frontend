@@ -6,7 +6,7 @@ import Divider from "../../utils/divider/Divider";
 import {getEducations} from "../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 
-function Educations() {
+function Educations({header}: { header: string }) {
     type EducationsType = {
         name: string,
         degree: string,
@@ -77,7 +77,7 @@ function Educations() {
 
     return (
         <div id={'educations'}>
-            <HeaderTitle text={'Educations'}/>
+            <HeaderTitle text={header}/>
             <div id={'educations-content'}>
                 {educations.map((education, index) => {
                     return (

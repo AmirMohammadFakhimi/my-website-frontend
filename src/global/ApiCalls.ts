@@ -19,7 +19,7 @@ export const getProjects = () => customAxios.get('projects')
 
 export const getCourses = () => customAxios.get('courses')
 
-export const getLicenses = () => customAxios.get('licenses')
+export const getHonorsAndCertificates = () => customAxios.get('honors-and-certificates')
 
 export const getCV = () => customAxios.defaults.baseURL + '/cv'
 

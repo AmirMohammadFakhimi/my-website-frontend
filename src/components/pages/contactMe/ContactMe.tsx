@@ -3,7 +3,7 @@ import './ContactMe.css'
 import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import {getCV, getResume} from "../../../global/ApiCalls";
 
-function ContactMe() {
+function ContactMe({header}: { header: string }) {
     const socialMedia: {
         name: string,
         text: string,
@@ -53,7 +53,7 @@ function ContactMe() {
 
     return (
         <div>
-            <HeaderTitle text={'Contact Me'}/>
+            <HeaderTitle text={header}/>
             <div id={'contact-me-body'}>
                 <div id={'contact-me-text'}>
                     <p>
