@@ -80,7 +80,7 @@ function Courses({header}: { header: string }) {
 
     return (
         <div>
-            <HeaderTitle text={header}/>
+            <HeaderTitle text={header} total={courses.length}/>
             <ul id={'courses-list'}>
                 {courses.map((course, index) => (
                     <li key={index} className={'course'}>
