@@ -15,9 +15,9 @@ function ContactMe({header}: { header: string }) {
             url: 'https://maps.google.com/?q=Tehran,+Tehran+Province,+Iran&ftid=0x3f8e00491ff3dcd9:0xf0b3697c567024bc',
         },
         {
-            name: 'Telegram',
-            text: '@AmirMohammadFakhimi',
-            url: 'https://t.me/AmirMohammadFakhimi',
+            name: 'Personal Email',
+            text: 'fakhimi.amirmohamad@gmail.com',
+            url: 'mailto:fakhimi.amirmohamad@gmail.com',
         },
         {
             name: 'University Email',
@@ -25,19 +25,14 @@ function ContactMe({header}: { header: string }) {
             url: 'mailto:amfakhimi@sharif.edu',
         },
         {
-            name: 'Personal Email',
-            text: 'research@amfakhimi.com',
-            url: 'mailto:research@amfakhimi.com',
+            name: 'LinkedIn',
+            text: 'amir-mohammad-fakhimi',
+            url: 'https://linkedin.com/in/amir-mohammad-fakhimi',
         },
         {
             name: 'GitHub',
             text: 'AmirMohammadFakhimi',
             url: 'https://github.com/AmirMohammadFakhimi',
-        },
-        {
-            name: 'LinkedIn',
-            text: 'amir-mohammad-fakhimi',
-            url: 'https://linkedin.com/in/amir-mohammad-fakhimi',
         },
         {
             name: 'Medium',
