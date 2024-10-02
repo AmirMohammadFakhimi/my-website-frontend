@@ -1,11 +1,19 @@
 import React from 'react';
 import './HeaderTitle.css';
 
-function HeaderTitle({text, className}: { text: string, className?: string }) {
+function HeaderTitle({text, total, className}: { text: string, total?: number, className?: string }) {
     return (
-        <p className={`header-title ${className}`}>
-            {text}
-        </p>
+        <>
+            <p className={`header-title ${className}`} style={{marginBlockEnd: total ? '0' : ''}}>
+                {text}
+            </p>
+
+            {total &&
+                <p className={`header-title total-tile ${className}`}>
+                    {`Total: ${total}`}
+                </p>
+            }
+        </>
     )
 }
 

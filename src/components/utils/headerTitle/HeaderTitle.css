@@ -4,3 +4,11 @@
     padding-top: 70px;
     font: 700 2.3rem Kalam, sans-serif;
 }
+
+.total-tile {
+    font-size: 1.9rem;
+    color: gold;
+    padding-top: 0;
+    margin-block-start: 0;
+    margin-block-end: 15px;
+}

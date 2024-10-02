@@ -5,7 +5,6 @@ import InfoTileInfoPart from "../../utils/infoTile/infoTileInfoPart/InfoTileInfo
 import {onAxiosError, onAxiosSuccess} from "../../../global/Errors";
 import {getProjects} from "../../../global/ApiCalls";
 import Filter from "../../utils/filter/Filter";
-import TotalTile from "../../utils/totalTile/TotalTile";
 
 function Projects({header}: { header: string }) {
     type LabelType = 'Highlights' | 'Others'
@@ -75,8 +74,7 @@ function Projects({header}: { header: string }) {
 
     return (
         <div id={'projects'}>
-            <HeaderTitle text={header} className={'projects-header'}/>
-            <TotalTile total={filteredProjects.length}/>
+            <HeaderTitle text={header} total={filteredProjects.length}/>
             <Filter values={projects} setFilteredValues={setFilteredProjects}/>
             <div id={'projects-container'}>
                 {filteredProjects.map((project, index) => (
