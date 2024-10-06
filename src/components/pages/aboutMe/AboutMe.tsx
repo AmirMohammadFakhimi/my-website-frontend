@@ -63,11 +63,12 @@ function AboutMe() {
                 </p>
                 <ul className={'about-me-list'}>
                     <li className={'about-me-list-item'}>
-                        At {getBold('Rahnema College')}, I sharpened my programming skills, focusing on front-end
-                        development.
+                        At {getLink('Rahnema College', 'https://rahnemacollege.com')}, I sharpened my programming
+                        skills, focusing on front-end development.
                     </li>
                     <li className={'about-me-list-item'}>
-                        Later, I joined {getBold('Sokhan AI')}, where I worked on Automated Speech Recognition (ASR).
+                        Later, I joined {getLink('Sokhan AI', 'https://sokhan.ai')}, where I worked on Automated Speech
+                        Recognition (ASR).
                     </li>
                 </ul>
                 <p className={'about-me-paragraph'}>
@@ -103,7 +104,7 @@ function AboutMe() {
                     Looking forward, I am excited to further develop my expertise in {getBold('Deep Learning')} and
                     continue {getBold('exploring innovative solutions in AI')}.
                 </p>
-                {/*<br/>*/}
+                <br/>
 
                 <p className={'about-me-paragraph'}>
                     And remember-{getBold('there\'s always a reason to smile')}! 😊
