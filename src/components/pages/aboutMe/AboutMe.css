@@ -74,6 +74,7 @@
     #about-me-text {
         margin: 0;
         max-width: 80%;
+        text-align: start;
     }
 
     #profile-image {
