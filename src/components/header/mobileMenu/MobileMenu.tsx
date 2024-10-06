@@ -53,7 +53,7 @@ function MobileMenu({selectedMenuItem, setSelectedMenuItem}: {
                 open={open}
                 onClose={handleClose(undefined)}
                 sx={{
-                    maxHeight: '70%',
+                    maxHeight: '75%',
                     '& .MuiMenu-paper': {
                         backgroundColor: 'rgba(44,44,44,0.7)',
                         backdropFilter: 'blur(10px)',
