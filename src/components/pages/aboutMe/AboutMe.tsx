@@ -26,67 +26,90 @@ function AboutMe() {
     return (
         <div id={'about-me'}>
             <div id={'about-me-text'}>
-                <p id={'title'}>Hi There! I'm Amir Mohammad 👋🏻</p>
+                <p id={'title'}>Hi there! I'm Amir Mohammad 👋🏻</p>
                 <p className={'about-me-paragraph'}>
-                    First and foremost, I firmly believe in {getBold('Laughing to Life')} and making the most of every
-                    moment {getBold(':)')}
+                    First of all, {getBold('Laugh to Life')} and welcome to my website {getBold(':)')}
+                </p>
+                <p className={'about-me-paragraph'}>
+                    I’m {getBold('Amir Mohammad Fakhimi')}, born in the beautiful city of Kashan, and
+                    currently {getBold(String(getAge()))} years old.
                 </p>
                 <br/>
+
                 <p className={'about-me-paragraph'}>
-                    I hope your day has been fantastic so far. Allow me to introduce myself. I
-                    am {getBold('Amir Mohammad Fakhimi')}, born on {getBold('September 16, 2002')}, in the picturesque
-                    city of Kashan, Iran. That makes me {getBold(String(getAge()))} years old and brimming with
-                    enthusiasm for life.
-                </p>
-                <br/>
-                <p className={'about-me-paragraph'}>
-                    My journey began in Kashan, where I completed my high school education
-                    at {getLink('Shahid Beheshti (Ehsan) High School', 'http://www.beheshtikasch.ir')}. However, my
-                    thirst for
-                    knowledge and passion for technology led me to pursue my dreams further afield.
+                    My academic journey started
+                    at {getLink('Shahid Beheshti (Ehsan) High School', 'http://www.beheshtikasch.ir')}, where I pursued
+                    my passion for Mathematics and Physics.
                 </p>
                 <p className={'about-me-paragraph'}>
-                    For my university education, I ventured to Tehran, Iran, where I was fortunate enough to be accepted
-                    into the prestigious {getLink('Sharif University of Technology', 'https://en.sharif.edu')} (the best
+                    In 2020, I began my {getBold('undergraduate')} studies in {getBold('Computer Engineering')} at the
+                    prestigious {getLink('Sharif University of Technology', 'https://en.sharif.edu')} (the best
                     university in Iran, according
-                    to {getLink('QS ranking 2023', 'https://www.topuniversities.com/university-rankings/world-university-rankings/2023')}).
-                    Here, I delved headfirst into the world of {getBold('Computer Engineering')}, driven by my love for
-                    coding and machine learning. I've honed my skills in various programming languages,
-                    including {getBold('C')} and {getBold('Java')},
-                    and immersed myself in the captivating realms of {getBold('Machine Learning')}.
+                    to {getLink('QS ranking 2025', 'https://www.topuniversities.com/world-university-rankings?countries=ir')}).
+                    During this time, I've deepened my knowledge of programming, learning languages such
+                    as {getBold('C')}, {getBold('Java')}, {getBold('Swift')}, and {getBold('Python')}, while working
+                    with {getBold('front-end')} and {getBold('back-end')} frameworks
+                    like {getBold('FastAPI')}, {getBold('React.js')}, and {getBold('Next.js')}.
+                </p>
+                <p className={'about-me-paragraph'}>
+                    My interest in {getBold('Artificial Intelligence (AI)')} grew during my university years, with a
+                    special focus on {getBold('Deep Learning')},
+                    particularly {getBold('Natural Language Processing (NLP)')} and {getBold('Computer Vision')}.
                 </p>
                 <br/>
+
                 <p className={'about-me-paragraph'}>
-                    In the development arena, I've developed a keen interest in {getBold('iOS development')}, taking on
-                    several projects to challenge and expand my skills. In the research sphere, I'm deeply fascinated by
-                    Machine
-                    Learning, particularly in the domains
-                    of {getBold('Natural Language Processing')}, {getBold('Computer Vision')},
-                    and {getBold('Deep Learning')}.
+                    I had the opportunity to complete two internships, which greatly enriched my practical experience:
+                </p>
+                <ul className={'about-me-list'}>
+                    <li className={'about-me-list-item'}>
+                        At {getBold('Rahnema College')}, I sharpened my programming skills, focusing on front-end
+                        development.
+                    </li>
+                    <li className={'about-me-list-item'}>
+                        Later, I joined {getBold('Sokhan AI')}, where I worked on Automated Speech Recognition (ASR).
+                    </li>
+                </ul>
+                <p className={'about-me-paragraph'}>
+                    These experiences helped me gain valuable insights into the real-world challenges of Software
+                    Engineering and AI in the industry.
                 </p>
                 <br/>
+
                 <p className={'about-me-paragraph'}>
-                    One pivotal moment in my journey was when I secured a spot in
-                    the {getLink('Rahnema College summer boot camp', 'https://rahnemacollege.com')} in
-                    2022. There, I had the opportunity to acquire a wealth of knowledge, with a particular highlight
-                    being my involvement in the {getBold('Frontend')} development of
-                    the {getLink('final project', 'https://github.com/Rahnema-College-SU/Football-Fantasy-FrontEnd')}.
-                    This experience added
-                    another layer to my skill set and fueled my thirst for growth.
+                    On the research side, I’ve also contributed to AI-driven projects.
+                </p>
+                <ul className={'about-me-list'}>
+                    <li className={'about-me-list-item'}>
+                        We are conducting a survey on {getBold('Compositional Problems of Stable Diffusion Models')},
+                        which solve compositional challenges in Stable Diffusion models, such as object relationships,
+                        positional consistency, and scale issues. This survey provides a comprehensive overview of
+                        advancements aimed at improving the generation of well-composed images by Diffusion Models.
+                    </li>
+                    <li className={'about-me-list-item'}>
+                        In addition, We are developing
+                        an {getBold('AI-Driven Referee Recommendation System for')} {getLink('Scientia Iranica Journal', 'https://scientiairanica.sharif.edu')}.
+                        This project aims to enhance the peer review by automatically matching articles with suitable
+                        referees using NLP and other AI methods.
+                    </li>
+                </ul>
+                <p className={'about-me-paragraph'}>
+                    These projects allowed me to explore advanced topics in NLP and Computer Vision, broadening my
+                    knowledge and experience in these research areas.
                 </p>
                 <br/>
+
                 <p className={'about-me-paragraph'}>
-                    In my ever-evolving quest for knowledge, I remain an avid learner and explorer of new horizons.
-                    Learning
-                    is a passion of mine, and I'm committed to being an active participant in my exciting journey of
-                    self-improvement.
+                    Looking forward, I am excited to further develop my expertise in {getBold('Deep Learning')} and
+                    continue {getBold('exploring innovative solutions in AI')}.
                 </p>
+                {/*<br/>*/}
+
                 <p className={'about-me-paragraph'}>
-                    I look forward to the opportunity of learning from you and sharing my knowledge. Let's embark on
-                    this incredible journey together, and remember, {getBold('always Be happy')}! 😊
+                    And remember-{getBold('there\'s always a reason to smile')}! 😊
                 </p>
-                {/*<p id={'add-height'}/>*/}
             </div>
+
             <img id={'profile-image'} src={profileImage} alt={'my profile'}/>
         </div>
     );
