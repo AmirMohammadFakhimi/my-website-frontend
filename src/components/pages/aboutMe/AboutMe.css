@@ -31,6 +31,16 @@
     color: rgba(114, 130, 159, 0.82);
 }
 
+.about-me-list {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.about-me-list-item::marker {
+    color: yellow;
+    font-size: 1.5rem;
+}
+
 #title {
     font: 700 2.3rem Kalam, sans-serif;
 }
