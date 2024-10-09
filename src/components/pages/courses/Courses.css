@@ -20,6 +20,18 @@
     margin-bottom: 5px;
 }
 
+.course-title-link {
+    text-decoration: underline;
+}
+
+.course-title-link:hover {
+    color: #6180fb;
+}
+
+.course-title-link:visited {
+    color: darkgoldenrod;
+}
+
 .course-number {
     font: 400 1.4rem Kalam, sans-serif;
     color: white;
