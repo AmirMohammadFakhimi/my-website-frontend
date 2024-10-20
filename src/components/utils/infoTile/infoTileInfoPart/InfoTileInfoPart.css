@@ -10,14 +10,19 @@
 .tile-title {
     font: 700 2rem Kalam, sans-serif;
     color: gold;
+}
+
+.tile-title-link {
+    font: 700 2rem Kalam, sans-serif;
+    color: gold;
     text-decoration: underline;
 }
 
-.tile-title:hover {
+.tile-title-link:hover {
     opacity: 0.7;
 }
 
-.tile-title:visited {
+.tile-title-link:visited {
     color: darkgoldenrod;
 }
 

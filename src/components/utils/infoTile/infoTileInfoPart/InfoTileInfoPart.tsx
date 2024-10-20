@@ -24,7 +24,7 @@ function InfoTileInfoPart({
     description?: string,
     skills?: string[],
     characterLimit?: number,
-    websiteUrl: string,
+    websiteUrl?: string,
     children?: React.ReactNode,
 }) {
     function getDateText(startDate: Date, endDate?: Date | 'Present') {
@@ -54,15 +54,22 @@ function InfoTileInfoPart({
 
     return (
         <div className={'tile-info'}>
-            <a className={'tile-title'} href={websiteUrl} target={'_blank'} rel='noreferrer'>
-                {title}
-            </a>
+            {websiteUrl ?
+                <a className={'tile-title-link'} href={websiteUrl} target={'_blank'} rel='noreferrer'>
+                    {title}
+                </a>
+                :
+                <div className={'tile-title'}>
+                    {title}
+                </div>
+            }
             <div
                 className={'tile-subtitle'}>{subtitle}</div>
             {getDateText(startDate, endDate)}
             <div
                 className={'tile-under-date'}>{underDate}</div>
-            <CustomShowMoreText className={'tile-description'} character={characterLimit} headline={descriptionHeadline}>
+            <CustomShowMoreText className={'tile-description'} character={characterLimit}
+                                headline={descriptionHeadline}>
                 {description}
             </CustomShowMoreText>
             <div className={'tile-skills-container'}>
