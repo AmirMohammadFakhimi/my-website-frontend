@@ -21,6 +21,4 @@ export const getCourses = () => customAxios.get('courses')
 
 export const getHonorsAndCertificates = () => customAxios.get('honors-and-certificates')
 
-export const getCV = () => customAxios.defaults.baseURL + '/cv'
-
 export const getResume = () => customAxios.defaults.baseURL + '/resume'
