@@ -16,7 +16,7 @@ function Projects({header}: { header: string }) {
         associateWith?: string,
         description: string,
         skills: string[],
-        projectUrl: string,
+        projectUrl?: string,
         labels: LabelType[]
     }[]
 
@@ -28,7 +28,7 @@ function Projects({header}: { header: string }) {
             associate_with?: string,
             description: string,
             skills: string[],
-            project_url: string,
+            project_url?: string,
             labels: LabelType[]
         }[]
     }
