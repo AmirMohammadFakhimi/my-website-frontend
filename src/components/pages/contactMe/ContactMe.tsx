@@ -58,8 +58,8 @@ function ContactMe({header}: { header: string }) {
                         soon as possible.
                     </p>
                     <p>
-                        If you are Looking for my qualifications in more detail, you can download my Resume <a
-                        href={getResume()} className={'file-download'} download={true}>here</a> :)
+                        If you are Looking for my qualifications in more detail, you can download my <a
+                        href={getResume()} className={'file-download'} download={true}>Resume</a> :)
                     </p>
                     <p id={'contact-me-last-text'}>
                         Let's connect and explore new opportunities together!
