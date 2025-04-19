@@ -4,3 +4,11 @@
     flex-direction: column;
     font-family: Kalam, sans-serif;
 }
+
+.experiences-header {
+    margin-bottom: 0;
+}
+
+.experiences-filter {
+    margin-bottom: 40px !important;
+}

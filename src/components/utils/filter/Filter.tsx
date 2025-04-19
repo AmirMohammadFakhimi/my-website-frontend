@@ -1,11 +1,11 @@
-import {useState} from "react";
 import './Filter.css'
 import {ArrElement} from "../../../global/Types";
+import BaseFilter from "../baseFilter/BaseFilter";
 
-function Filter({values, setFilteredValues, customOnFilterChanged}: {
+function Filter({values, setFilteredValues, customOnFilterClick}: {
     values: { labels: string[], [key: string]: any }[],
     setFilteredValues: (values: any) => void,
-    customOnFilterChanged?: (filter: string) => void,
+    customOnFilterClick?: (filter: string) => void,
 }) {
     const filtersSet: Set<string> = values.reduce((acc, value) => {
         value.labels.forEach(label => acc.add(label));
@@ -27,43 +27,28 @@ function Filter({values, setFilteredValues, customOnFilterChanged}: {
     ]
     type FilterType = ArrElement<typeof filters>
 
-
-    const [selectedFilter, setSelectedFilter] = useState<FilterType>('All')
-
     function isFiltersInvalid(filters: FilterType[]) {
         return filters.length === 0 ||
             (filters.length === 1 && filters.includes('All')) ||
             (filters.length === 2 && filters.includes('All') && filters.includes('Others'))
     }
 
-    function onFilterButtonClick(filter: FilterType) {
-        setSelectedFilter(filter)
-
+    function onFilterClick(filter: FilterType) {
         if (filter === 'All')
             setFilteredValues(values)
         else {
-            const filteredVolunteering = values.filter(value =>
+            const filteredValues = values.filter(value =>
                 value.labels.includes(filter))
-            setFilteredValues(filteredVolunteering)
+            setFilteredValues(filteredValues)
         }
 
-        if (customOnFilterChanged)
-            customOnFilterChanged(filter)
+        if (customOnFilterClick)
+            customOnFilterClick(filter)
     }
 
     return (
         isFiltersInvalid(filters) ? null :
-            <p className={'filter-container'}>
-                {filters.map((filter, index) => {
-                    return (
-                        <button key={index}
-                                className={'filter-button ' + (selectedFilter === filter ? 'selected-filter' : '')}
-                                onClick={() => onFilterButtonClick(filter)}>
-                            {filter}
-                        </button>
-                    )
-                })}
-            </p>
+            <BaseFilter filters={filters} customOnFilterClick={onFilterClick}/>
     )
 }
 
