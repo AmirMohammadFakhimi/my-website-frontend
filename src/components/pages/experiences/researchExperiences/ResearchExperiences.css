@@ -1,27 +1,27 @@
-.laboratory-supervisors {
+.research-experience-supervisors {
     margin-block-start: 0;
     margin-block-end: 0;
     text-indent: 0;
 }
 
-.laboratory-supervisor {
+.research-experience-supervisor {
     margin-left: 15px;
     margin-top: 5px;
 }
 
-.laboratory-supervisor::marker {
+.research-experience-supervisor::marker {
     color: #6180fb;
 }
 
-.laboratory-link {
+.research-experience-link {
     text-decoration: underline;
     color: #6180fb;
 }
 
-.laboratory-link:hover {
+.research-experience-link:hover {
     color: yellow;
 }
 
-.laboratory-link:visited {
+.research-experience-link:visited {
     color: darkgoldenrod;
 }
