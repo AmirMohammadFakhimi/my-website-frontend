@@ -27,7 +27,7 @@ function Header() {
                 <img id={'header-logo'} src={logo} alt={'logo containing a single A character.'}/>
                 <div id={'name-slogan'}>
                     <div id={'header-name'}>Amir Mohammad Fakhimi</div>
-                    <div id={'header-slogan'}>Laugh to Life :)</div>
+                    <div id={'header-slogan'}>Laugh at Life :)</div>
                 </div>
             </div>
             <DesktopMenu selectedMenuItem={selectedMenuItem} setSelectedMenuItem={setSelectedMenuItem}/>
