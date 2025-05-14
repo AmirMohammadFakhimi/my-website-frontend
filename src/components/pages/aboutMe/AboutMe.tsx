@@ -28,7 +28,7 @@ function AboutMe() {
             <div id={'about-me-text'}>
                 <p id={'title'}>Hi there! I'm Amir Mohammad 👋🏻</p>
                 <p className={'about-me-paragraph'}>
-                    First of all, {getBold('Laugh to Life')} and welcome to my website {getBold(':)')}
+                    First of all, {getBold('Laugh at Life')} and welcome to my website {getBold(':)')}
                 </p>
                 <p className={'about-me-paragraph'}>
                     I’m {getBold('Amir Mohammad Fakhimi')}, born in the beautiful city of Kashan, and
