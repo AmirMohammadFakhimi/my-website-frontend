@@ -26,10 +26,10 @@ function ResearchExperiences() {
     type ResearchExperiencesResponseType = {
         research_experiences: {
             title: string,
-            employmentType: EmploymentType,
+            employment_type: EmploymentType,
             company: string,
             location: string,
-            locationType: LocationType,
+            location_type: LocationType,
             start_date: Date,
             end_date: Date | 'Present',
             description?: string,
@@ -50,10 +50,10 @@ function ResearchExperiences() {
         currentResearchExperiences.forEach(researchExperience => {
             newResearchExperiences.push({
                 title: researchExperience.title,
-                employmentType: researchExperience.employmentType,
+                employmentType: researchExperience.employment_type,
                 company: researchExperience.company,
                 location: researchExperience.location,
-                locationType: researchExperience.locationType,
+                locationType: researchExperience.location_type,
                 startDate: new Date(researchExperience.start_date),
                 endDate: researchExperience.end_date === 'Present' ? 'Present' : new Date(researchExperience.end_date),
                 description: researchExperience.description,
@@ -91,7 +91,7 @@ function ResearchExperiences() {
             {researchExperience.supervisors.length === 1 ? 'Supervisor:' : 'Supervisors:'}
             <ul className={'research-experience-supervisors'}>
                 {researchExperience.supervisors.map((supervisor, index) => (
-                    <li className={'research-experience-supervisor'}>
+                    <li key={index} className={'research-experience-supervisor'}>
                         {supervisor}&nbsp;
                         <a className={'research-experience-link'}
                            href={researchExperience.researchExperiencesUrls[index]}
@@ -109,11 +109,12 @@ function ResearchExperiences() {
         <div>
             {researchExperiences.map((researchExperience, index) => (
                 <>
-                    <InfoTile index={index} title={researchExperience.title}
+                    <InfoTile key={index} index={index} title={researchExperience.title}
                               subtitle={`${researchExperience.company} • ${researchExperience.employmentType}`}
                               startDate={researchExperience.startDate} endDate={researchExperience.endDate}
                               underDate={`${researchExperience.location} • ${researchExperience.locationType}`}
-                              descriptionHeadline={getDescriptionHeadline(researchExperience)}
+                              // descriptionHeadline={getDescriptionHeadline(researchExperience)}
+                              // descriptionHeadline={"getDescriptionHeadline(researchExperience)aaaaaaaaaaa"}
                               description={researchExperience.description}
                               logoUrl={researchExperience.logoUrl} websiteUrl={researchExperience.websiteUrl}/>
                     <Divider index={index} allCount={researchExperiences.length}/>
