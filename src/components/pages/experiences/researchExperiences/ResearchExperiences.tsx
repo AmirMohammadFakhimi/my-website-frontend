@@ -19,8 +19,8 @@ function ResearchExperiences() {
         supervisors: string[],
         logoUrl: string,
         websiteUrl: string,
-        researchExperiencesNames: string[],
-        researchExperiencesUrls: string[]
+        researchExperienceNames: string[],
+        researchExperienceUrls: string[]
     }[]
 
     type ResearchExperiencesResponseType = {
@@ -36,8 +36,8 @@ function ResearchExperiences() {
             supervisors: string[],
             logo_url: string,
             website_url: string,
-            research_experiences_names: string[],
-            research_experiences_urls: string[]
+            research_experience_names: string[],
+            research_experience_urls: string[]
         }[]
     }
 
@@ -60,8 +60,8 @@ function ResearchExperiences() {
                 supervisors: researchExperience.supervisors,
                 logoUrl: researchExperience.logo_url,
                 websiteUrl: researchExperience.website_url,
-                researchExperiencesNames: researchExperience.research_experiences_names,
-                researchExperiencesUrls: researchExperience.research_experiences_urls
+                researchExperienceNames: researchExperience.research_experience_names,
+                researchExperienceUrls: researchExperience.research_experience_urls
             })
         })
 
@@ -82,8 +82,9 @@ function ResearchExperiences() {
     }, [])
 
     function getDescriptionHeadline(researchExperience: ResearchExperiencesType[0]) {
-        if (!researchExperience || !researchExperience.researchExperiencesNames || !researchExperience.researchExperiencesUrls ||
-            researchExperience.researchExperiencesNames.length !== researchExperience.researchExperiencesUrls.length) {
+        if (!researchExperience || !researchExperience.researchExperienceNames || !researchExperience.researchExperienceUrls ||
+            researchExperience.researchExperienceNames.length !== researchExperience.researchExperienceUrls.length) {
+            console.log(researchExperience.researchExperienceNames.length !== researchExperience.researchExperienceUrls.length)
             return undefined
         }
 
@@ -94,10 +95,10 @@ function ResearchExperiences() {
                     <li key={index} className={'research-experience-supervisor'}>
                         {supervisor}&nbsp;
                         <a className={'research-experience-link'}
-                           href={researchExperience.researchExperiencesUrls[index]}
+                           href={researchExperience.researchExperienceUrls[index]}
                            target={'_blank'}
                            rel='noreferrer'>
-                            ({researchExperience.researchExperiencesNames[index]})
+                            ({researchExperience.researchExperienceNames[index]})
                         </a>
                     </li>
                 ))}
@@ -113,8 +114,7 @@ function ResearchExperiences() {
                               subtitle={`${researchExperience.company} • ${researchExperience.employmentType}`}
                               startDate={researchExperience.startDate} endDate={researchExperience.endDate}
                               underDate={`${researchExperience.location} • ${researchExperience.locationType}`}
-                              // descriptionHeadline={getDescriptionHeadline(researchExperience)}
-                              // descriptionHeadline={"getDescriptionHeadline(researchExperience)aaaaaaaaaaa"}
+                              descriptionHeadline={getDescriptionHeadline(researchExperience)}
                               description={researchExperience.description}
                               logoUrl={researchExperience.logoUrl} websiteUrl={researchExperience.websiteUrl}/>
                     <Divider index={index} allCount={researchExperiences.length}/>
