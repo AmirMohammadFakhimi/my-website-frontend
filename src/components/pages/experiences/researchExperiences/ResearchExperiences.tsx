@@ -4,11 +4,15 @@ import {getResearchExperiences} from "../../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../../global/Errors";
 import InfoTile from "../../../utils/infoTile/InfoTile";
 import Divider from "../../../utils/divider/Divider";
+import {EmploymentType, LocationType} from "../workExperiences/WorkExperiences";
 
 function ResearchExperiences() {
     type ResearchExperiencesType = {
         title: string,
+        employmentType: EmploymentType,
         company: string,
+        location: string,
+        locationType: LocationType,
         startDate: Date,
         endDate: Date | 'Present',
         description?: string,
@@ -22,7 +26,10 @@ function ResearchExperiences() {
     type ResearchExperiencesResponseType = {
         research_experiences: {
             title: string,
+            employmentType: EmploymentType,
             company: string,
+            location: string,
+            locationType: LocationType,
             start_date: Date,
             end_date: Date | 'Present',
             description?: string,
@@ -43,7 +50,10 @@ function ResearchExperiences() {
         currentResearchExperiences.forEach(researchExperience => {
             newResearchExperiences.push({
                 title: researchExperience.title,
+                employmentType: researchExperience.employmentType,
                 company: researchExperience.company,
+                location: researchExperience.location,
+                locationType: researchExperience.locationType,
                 startDate: new Date(researchExperience.start_date),
                 endDate: researchExperience.end_date === 'Present' ? 'Present' : new Date(researchExperience.end_date),
                 description: researchExperience.description,
@@ -99,8 +109,10 @@ function ResearchExperiences() {
         <div>
             {researchExperiences.map((researchExperience, index) => (
                 <>
-                    <InfoTile index={index} title={researchExperience.title} subtitle={researchExperience.company}
+                    <InfoTile index={index} title={researchExperience.title}
+                              subtitle={`${researchExperience.company} • ${researchExperience.employmentType}`}
                               startDate={researchExperience.startDate} endDate={researchExperience.endDate}
+                              underDate={`${researchExperience.location} • ${researchExperience.locationType}`}
                               descriptionHeadline={getDescriptionHeadline(researchExperience)}
                               description={researchExperience.description}
                               logoUrl={researchExperience.logoUrl} websiteUrl={researchExperience.websiteUrl}/>
