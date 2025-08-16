@@ -7,8 +7,7 @@ import MediaTile from "../../../utils/MediaTile/MediaTile";
 import {getWorkExperiences} from "../../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../../global/Errors";
 
-function WorkExperiences() {
-    type EmploymentType =
+export type EmploymentType =
         'Full-time'
         | 'Part-time'
         | 'Self-employed'
@@ -18,8 +17,9 @@ function WorkExperiences() {
         | 'Apprenticeship'
         | 'Seasonal'
 
-    type LocationType = 'On-site' | 'Hybrid' | 'Remote'
+export type LocationType = 'On-site' | 'Hybrid' | 'Remote'
 
+function WorkExperiences() {
     type WorkExperiencesType = {
         title: string,
         employmentType: EmploymentType,
