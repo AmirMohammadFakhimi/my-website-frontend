@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import './WorkExperiences';
 import InfoTile from "../../../utils/infoTile/InfoTile";
 import Divider from "../../../utils/divider/Divider";
@@ -101,7 +101,7 @@ function WorkExperiences() {
     return (
         <div>
             {workExperiences.map((experience, index) => (
-                <>
+                <Fragment key={index}>
                     <InfoTile index={index} title={experience.title}
                               subtitle={`${experience.company} • ${experience.employmentType}`}
                               startDate={experience.startDate} endDate={experience.endDate}
@@ -114,7 +114,7 @@ function WorkExperiences() {
                         <MediaTile medias={experience.medias}/>
                     </InfoTile>
                     <Divider index={index} allCount={workExperiences.length}/>
-                </>
+                </Fragment>
             ))}
         </div>
     );

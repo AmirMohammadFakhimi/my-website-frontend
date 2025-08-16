@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import './Educations.css';
 import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTile from "../../utils/infoTile/InfoTile";
@@ -79,20 +79,18 @@ function Educations({header}: { header: string }) {
         <div id={'educations'}>
             <HeaderTitle text={header}/>
             <div id={'educations-content'}>
-                {educations.map((education, index) => {
-                    return (
-                        <>
-                            <InfoTile index={index} title={education.name}
-                                      subtitle={`${education.degree} in ${education.field}`}
-                                      startDate={education.startDate} endDate={education.endDate}
-                                      underDate={`Grade: ${education.myGrade} / ${education.maxGrade}`}
-                                      skills={education.skills}
-                                      logoUrl={education.logoUrl} websiteUrl={education.websiteUrl}
-                                      imageUrl={education.imageUrl}/>
-                            <Divider index={index} allCount={educations.length}/>
-                        </>
-                    )
-                })}
+                {educations.map((education, index) => (
+                    <Fragment key={index}>
+                        <InfoTile index={index} title={education.name}
+                                  subtitle={`${education.degree} in ${education.field}`}
+                                  startDate={education.startDate} endDate={education.endDate}
+                                  underDate={`Grade: ${education.myGrade} / ${education.maxGrade}`}
+                                  skills={education.skills}
+                                  logoUrl={education.logoUrl} websiteUrl={education.websiteUrl}
+                                  imageUrl={education.imageUrl}/>
+                        <Divider index={index} allCount={educations.length}/>
+                    </Fragment>
+                ))}
             </div>
         </div>
     )

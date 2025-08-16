@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import "./HonorsAndCertificates.css";
 import HeaderTitle from "../../utils/headerTitle/HeaderTitle";
 import InfoTile from "../../utils/infoTile/InfoTile";
@@ -76,7 +76,7 @@ function HonorsAndCertificates({header}: { header: string }) {
             <HeaderTitle text={header}/>
             <div id={'honors-and-certificates-container'}>
                 {honorsAndCertificates.map((honorAndCertificate, index) => (
-                    <>
+                    <Fragment key={index}>
                         <InfoTile index={index} title={honorAndCertificate.title}
                                   subtitle={`${honorAndCertificate.company}`} startDate={honorAndCertificate.issueDate}
                                   description={honorAndCertificate.description} skills={honorAndCertificate.skills}
@@ -86,7 +86,7 @@ function HonorsAndCertificates({header}: { header: string }) {
                                   imageRedirectUrl={honorAndCertificate.honorAndCertificateUrl}>
                         </InfoTile>
                         <Divider index={index} allCount={honorsAndCertificates.length}/>
-                    </>
+                    </Fragment>
                 ))}
             </div>
         </div>

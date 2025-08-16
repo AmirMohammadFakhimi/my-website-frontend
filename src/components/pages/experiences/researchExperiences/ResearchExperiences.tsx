@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import './ResearchExperiences.css'
 import {getResearchExperiences} from "../../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../../global/Errors";
@@ -108,8 +108,8 @@ function ResearchExperiences() {
     return (
         <div>
             {researchExperiences.map((researchExperience, index) => (
-                <>
-                    <InfoTile key={index} index={index} title={researchExperience.title}
+                <Fragment key={index}>
+                    <InfoTile index={index} title={researchExperience.title}
                               subtitle={`${researchExperience.company} • ${researchExperience.employmentType}`}
                               startDate={researchExperience.startDate} endDate={researchExperience.endDate}
                               underDate={`${researchExperience.location} • ${researchExperience.locationType}`}
@@ -118,7 +118,7 @@ function ResearchExperiences() {
                               description={researchExperience.description}
                               logoUrl={researchExperience.logoUrl} websiteUrl={researchExperience.websiteUrl}/>
                     <Divider index={index} allCount={researchExperiences.length}/>
-                </>
+                </Fragment>
             ))}
         </div>
     )
