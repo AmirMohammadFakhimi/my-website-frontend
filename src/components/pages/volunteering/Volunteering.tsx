@@ -105,7 +105,7 @@ function Volunteering({header}: { header: string }) {
             <Filter values={volunteering} setFilteredValues={setFilteredVolunteering}/>
             <div id={'volunteering-container'}>
                 {filteredVolunteering.map((volunteering, index) => (
-                    <InfoTile index={index} title={volunteering.role} subtitle={volunteering.company}
+                    <InfoTile key={index} index={index} title={volunteering.role} subtitle={volunteering.company}
                               startDate={volunteering.startDate} endDate={volunteering.endDate}
                               underDate={volunteering.cause}
                               descriptionHeadline={volunteering.supervisor ? volunteering.supervisor : undefined}
