@@ -1,10 +1,10 @@
 import React, {Fragment, useEffect, useState} from 'react';
-import './WorkExperiences';
+import './IndustryExperience';
 import InfoTile from "../../../utils/infoTile/InfoTile";
 import Divider from "../../../utils/divider/Divider";
 import {MediaType} from "../../../../global/Types";
 import MediaTile from "../../../utils/MediaTile/MediaTile";
-import {getWorkExperiences} from "../../../../global/ApiCalls";
+import {getIndustryExperience} from "../../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../../global/Errors";
 
 export type EmploymentType =
@@ -19,8 +19,8 @@ export type EmploymentType =
 
 export type LocationType = 'On-site' | 'Hybrid' | 'Remote'
 
-function WorkExperiences() {
-    type WorkExperiencesType = {
+function IndustryExperience() {
+    type IndustryExperienceType = {
         title: string,
         employmentType: EmploymentType,
         company: string,
@@ -37,8 +37,8 @@ function WorkExperiences() {
         medias: MediaType[]
     }[]
 
-    type WorkExperiencesResponseType = {
-        work_experiences: {
+    type IndustryExperienceResponseType = {
+        industry_experience: {
             title: string,
             employment_type: EmploymentType,
             company: string,
@@ -56,41 +56,41 @@ function WorkExperiences() {
         }[]
     }
 
-    const [workExperiences, setWorkExperiences] = useState<WorkExperiencesType>([])
+    const [industryExperience, setIndustryExperience] = useState<IndustryExperienceType>([])
 
-    function convertWorkExperiencesResponse(response: WorkExperiencesResponseType): WorkExperiencesType {
-        const currentWorkExperiences = response.work_experiences
-        const newWorkExperiences: WorkExperiencesType = []
+    function convertIndustryExperienceResponse(response: IndustryExperienceResponseType): IndustryExperienceType {
+        const currentIndustryExperience = response.work_experiences
+        const newIndustryExperience: IndustryExperienceType = []
 
-        currentWorkExperiences.forEach(workExperience => {
-            newWorkExperiences.push({
-                title: workExperience.title,
-                employmentType: workExperience.employment_type,
-                company: workExperience.company,
-                location: workExperience.location,
-                locationType: workExperience.location_type,
-                startDate: new Date(workExperience.start_date),
-                endDate: workExperience.end_date === 'Present' ? 'Present' : new Date(workExperience.end_date),
-                description: workExperience.description,
-                skills: workExperience.skills,
-                logoUrl: workExperience.logo_url,
-                websiteUrl: workExperience.website_url,
-                certificateUrl: workExperience.certificate_url,
-                originalCertificateUrl: workExperience.original_certificate_url,
-                medias: workExperience.medias
+        currentIndustryExperience.forEach(industryExperience => {
+            newIndustryExperience.push({
+                title: industryExperience.title,
+                employmentType: industryExperience.employment_type,
+                company: industryExperience.company,
+                location: industryExperience.location,
+                locationType: industryExperience.location_type,
+                startDate: new Date(industryExperience.start_date),
+                endDate: industryExperience.end_date === 'Present' ? 'Present' : new Date(industryExperience.end_date),
+                description: industryExperience.description,
+                skills: industryExperience.skills,
+                logoUrl: industryExperience.logo_url,
+                websiteUrl: industryExperience.website_url,
+                certificateUrl: industryExperience.certificate_url,
+                originalCertificateUrl: industryExperience.original_certificate_url,
+                medias: industryExperience.medias
             })
         })
 
-        return newWorkExperiences
+        return newIndustryExperience
     }
 
     useEffect(() => {
-        getWorkExperiences()
+        getIndustryExperience()
             .then(
                 response =>
                     onAxiosSuccess({
                         res: response,
-                        onSuccess: () => setWorkExperiences(convertWorkExperiencesResponse(response.data))
+                        onSuccess: () => setIndustryExperience(convertIndustryExperienceResponse(response.data))
                     }),
                 error =>
                     onAxiosError({axiosError: error})
@@ -100,7 +100,7 @@ function WorkExperiences() {
 
     return (
         <div>
-            {workExperiences.map((experience, index) => (
+            {industryExperience.map((experience, index) => (
                 <Fragment key={index}>
                     <InfoTile index={index} title={experience.title}
                               subtitle={`${experience.company} • ${experience.employmentType}`}
@@ -113,11 +113,11 @@ function WorkExperiences() {
                               imageRedirectUrl={experience.originalCertificateUrl}>
                         <MediaTile medias={experience.medias}/>
                     </InfoTile>
-                    <Divider index={index} allCount={workExperiences.length}/>
+                    <Divider index={index} allCount={industryExperience.length}/>
                 </Fragment>
             ))}
         </div>
     );
 }
 
-export default WorkExperiences
+export default IndustryExperience

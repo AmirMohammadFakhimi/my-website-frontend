@@ -1,7 +1,7 @@
 export const urls = {
     aboutMe: 'about-me',
     educations: 'educations',
-    experiences: 'experiences',
+    experience: 'experience',
     volunteering: 'volunteering',
     projects: 'projects',
     courses: 'courses',
@@ -16,7 +16,7 @@ export const menuItems: {
 }[] = [
     {id: 1, name: 'About Me', url: urls.aboutMe},
     {id: 2, name: 'Educations', url: urls.educations},
-    {id: 3, name: 'Experiences', url: urls.experiences},
+    {id: 3, name: 'Experience', url: urls.experience},
     {id: 4, name: 'Volunteering', url: urls.volunteering},
     {id: 5, name: 'Projects', url: urls.projects},
     {id: 6, name: 'Courses', url: urls.courses},
