@@ -108,15 +108,15 @@ function ResearchExperience() {
 
     return (
         <div>
-            {researchExperience.map((researchExperience, index) => (
+            {researchExperience.map((eachResearchExperience, index) => (
                 <Fragment key={index}>
-                    <InfoTile index={index} title={researchExperience.title}
-                              subtitle={`${researchExperience.company} • ${researchExperience.employmentType}`}
-                              startDate={researchExperience.startDate} endDate={researchExperience.endDate}
-                              underDate={`${researchExperience.location} • ${researchExperience.locationType}`}
-                              descriptionHeadline={getDescriptionHeadline(researchExperience)}
-                              description={researchExperience.description}
-                              logoUrl={researchExperience.logoUrl} websiteUrl={researchExperience.websiteUrl}/>
+                    <InfoTile index={index} title={eachResearchExperience.title}
+                              subtitle={`${eachResearchExperience.company} • ${eachResearchExperience.employmentType}`}
+                              startDate={eachResearchExperience.startDate} endDate={eachResearchExperience.endDate}
+                              underDate={`${eachResearchExperience.location} • ${eachResearchExperience.locationType}`}
+                              descriptionHeadline={getDescriptionHeadline(eachResearchExperience)}
+                              description={eachResearchExperience.description}
+                              logoUrl={eachResearchExperience.logoUrl} websiteUrl={eachResearchExperience.websiteUrl}/>
                     <Divider index={index} allCount={researchExperience.length}/>
                 </Fragment>
             ))}
