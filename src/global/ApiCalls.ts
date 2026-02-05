@@ -9,9 +9,9 @@ const customAxios = axios.create(
 
 export const getEducations = () => customAxios.get('educations')
 
-export const getWorkExperiences = () => customAxios.get('work-experiences')
+export const getIndustryExperience = () => customAxios.get('industry-experience')
 
-export const getResearchExperiences = () => customAxios.get('research-experiences')
+export const getResearchExperience = () => customAxios.get('research-experience')
 
 export const getVolunteering = () => customAxios.get('volunteering')
 

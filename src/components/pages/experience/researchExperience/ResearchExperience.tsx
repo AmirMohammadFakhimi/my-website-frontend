@@ -1,13 +1,13 @@
 import React, {Fragment, useEffect, useState} from "react";
-import './ResearchExperiences.css'
-import {getResearchExperiences} from "../../../../global/ApiCalls";
+import './ResearchExperience.css'
+import {getResearchExperience} from "../../../../global/ApiCalls";
 import {onAxiosError, onAxiosSuccess} from "../../../../global/Errors";
 import InfoTile from "../../../utils/infoTile/InfoTile";
 import Divider from "../../../utils/divider/Divider";
-import {EmploymentType, LocationType} from "../workExperiences/WorkExperiences";
+import {EmploymentType, LocationType} from "../industryExperience/IndustryExperience";
 
-function ResearchExperiences() {
-    type ResearchExperiencesType = {
+function ResearchExperience() {
+    type ResearchExperienceType = {
         title: string,
         employmentType: EmploymentType,
         company: string,
@@ -23,8 +23,8 @@ function ResearchExperiences() {
         researchExperienceUrls: string[]
     }[]
 
-    type ResearchExperiencesResponseType = {
-        research_experiences: {
+    type ResearchExperienceResponseType = {
+        research_experience: {
             title: string,
             employment_type: EmploymentType,
             company: string,
@@ -41,14 +41,14 @@ function ResearchExperiences() {
         }[]
     }
 
-    const [researchExperiences, setResearchExperiences] = useState<ResearchExperiencesType>([])
+    const [researchExperience, setResearchExperience] = useState<ResearchExperienceType>([])
 
-    function convertResearchExperiencesResponse(response: ResearchExperiencesResponseType): ResearchExperiencesType {
-        const currentResearchExperiences = response.research_experiences
-        const newResearchExperiences: ResearchExperiencesType = []
+    function convertResearchExperienceResponse(response: ResearchExperienceResponseType): ResearchExperienceType {
+        const currentResearchExperience = response.research_experience
+        const newResearchExperience: ResearchExperienceType = []
 
-        currentResearchExperiences.forEach(researchExperience => {
-            newResearchExperiences.push({
+        currentResearchExperience.forEach(researchExperience => {
+            newResearchExperience.push({
                 title: researchExperience.title,
                 employmentType: researchExperience.employment_type,
                 company: researchExperience.company,
@@ -65,23 +65,23 @@ function ResearchExperiences() {
             })
         })
 
-        return newResearchExperiences
+        return newResearchExperience
     }
 
     useEffect(() => {
-        getResearchExperiences()
+        getResearchExperience()
             .then(
                 response =>
                     onAxiosSuccess({
                         res: response, onSuccess: () =>
-                            setResearchExperiences(convertResearchExperiencesResponse(response.data))
+                            setResearchExperience(convertResearchExperienceResponse(response.data))
                     }),
                 error =>
                     onAxiosError({axiosError: error})
             )
     }, [])
 
-    function getDescriptionHeadline(researchExperience: ResearchExperiencesType[0]) {
+    function getDescriptionHeadline(researchExperience: ResearchExperienceType[0]) {
         if (!researchExperience || !researchExperience.researchExperienceNames || !researchExperience.researchExperienceUrls ||
             researchExperience.researchExperienceNames.length !== researchExperience.researchExperienceUrls.length) {
             console.log(researchExperience.researchExperienceNames.length !== researchExperience.researchExperienceUrls.length)
@@ -108,7 +108,7 @@ function ResearchExperiences() {
 
     return (
         <div>
-            {researchExperiences.map((researchExperience, index) => (
+            {researchExperience.map((researchExperience, index) => (
                 <Fragment key={index}>
                     <InfoTile index={index} title={researchExperience.title}
                               subtitle={`${researchExperience.company} • ${researchExperience.employmentType}`}
@@ -117,11 +117,11 @@ function ResearchExperiences() {
                               descriptionHeadline={getDescriptionHeadline(researchExperience)}
                               description={researchExperience.description}
                               logoUrl={researchExperience.logoUrl} websiteUrl={researchExperience.websiteUrl}/>
-                    <Divider index={index} allCount={researchExperiences.length}/>
+                    <Divider index={index} allCount={researchExperience.length}/>
                 </Fragment>
             ))}
         </div>
     )
 }
 
-export default ResearchExperiences
+export default ResearchExperience

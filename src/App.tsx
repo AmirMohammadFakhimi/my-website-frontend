@@ -6,7 +6,7 @@ import Header from "./components/header/Header";
 import {menuItems, urls} from "./global/Variables";
 import Educations from "./components/pages/educations/Educations";
 import {getMenuItemUrl} from "./global/Storages";
-import Experiences from "./components/pages/experiences/Experiences";
+import Experience from "./components/pages/experience/Experience";
 import Volunteering from "./components/pages/volunteering/Volunteering";
 import Projects from "./components/pages/projects/Projects";
 import Courses from "./components/pages/courses/Courses";
@@ -35,7 +35,7 @@ function App() {
             <Routes>
                 <Route path={urls.aboutMe} element={<AboutMe/>}/>
                 <Route path={urls.educations} element={<Educations header={menuItems[1].name}/>}/>
-                <Route path={urls.experiences} element={<Experiences header={menuItems[2].name}/>}/>
+                <Route path={urls.experience} element={<Experience header={menuItems[2].name}/>}/>
                 <Route path={urls.volunteering} element={<Volunteering header={menuItems[3].name}/>}/>
                 <Route path={urls.projects} element={<Projects header={menuItems[4].name}/>}/>
                 <Route path={urls.courses} element={<Courses header={menuItems[5].name}/>}/>

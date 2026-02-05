@@ -1,14 +1,14 @@
-#experiences {
+#experience {
     width: 100%;
     display: flex;
     flex-direction: column;
     font-family: Kalam, sans-serif;
 }
 
-.experiences-header {
+.experience-header {
     margin-bottom: 0;
 }
 
-.experiences-filter {
+.experience-filter {
     margin-bottom: 40px !important;
 }
