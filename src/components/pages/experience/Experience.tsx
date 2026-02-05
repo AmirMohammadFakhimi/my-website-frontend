@@ -19,7 +19,7 @@ function Experience({header}: { header: string }) {
     }
 
     return (
-        <div id={'experiences'}>
+        <div id={'experience'}>
             <HeaderTitle text={filter === 'Research Experience' ? 'Research ' + header : 'Industry ' + header}
                          className={'experience-header'}/>
             <BaseFilter filters={filters} customOnFilterClick={onFilterChange} className={'experience-filter'}/>

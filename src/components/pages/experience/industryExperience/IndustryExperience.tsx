@@ -59,7 +59,7 @@ function IndustryExperience() {
     const [industryExperience, setIndustryExperience] = useState<IndustryExperienceType>([])
 
     function convertIndustryExperienceResponse(response: IndustryExperienceResponseType): IndustryExperienceType {
-        const currentIndustryExperience = response.work_experiences
+        const currentIndustryExperience = response.industry_experience
         const newIndustryExperience: IndustryExperienceType = []
 
         currentIndustryExperience.forEach(industryExperience => {
